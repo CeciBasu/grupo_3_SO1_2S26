@@ -1,0 +1,27 @@
+# Fuentes de LFS (tarballs y comprimidos)
+*.tar
+*.tar.gz
+*.tar.xz
+*.tar.bz2
+*.tgz
+*.zip
+sources/
+
+# Imágenes de disco de la VM
+*.vdi
+*.vmdk
+*.iso
+*.img
+*.qcow2
+
+# Credenciales y claves
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+.env
+*.token
+secrets*
+
+# Logs crudos de sesión (script)
+*.log

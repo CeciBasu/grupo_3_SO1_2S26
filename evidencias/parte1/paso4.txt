@@ -1,0 +1,186 @@
+[cbasualdo@localhost ~]$ gcc --version | head -n 1
+ld --version | head -n 1
+gcc (GCC) 14.3.1 20251022 (Red Hat 14.3.1-4)
+GNU ld version 2.41-63.el10
+[cbasualdo@localhost ~]$ cat > version-check.sh << "EOF"
+#!/bin/bash
+# A script to list version numbers of critical development tools
+
+# If you have tools installed in other directories, adjust PATH here AND
+# in ~lfs/.bashrc (section 4.4) as well.
+
+LC_ALL=C
+PATH=/usr/bin:/bin
+
+bail() { echo "FATAL: $1"; exit 1; }
+grep --version > /dev/null 2> /dev/null || bail "grep does not work"
+sed '' /dev/null || bail "sed does not work"
+sort   /dev/null || bail "sort does not work"
+
+ver_check()
+{
+   if ! type -p $2 &>/dev/null
+   then
+     echo "ERROR: Cannot find $2 ($1)"; return 1;
+   fi
+   v=$($2 --version 2>&1 | grep -E -o '[0-9]+\.[0-9\.]+[a-z]*' | head -n1)
+   if printf '%s\n' $3 $v | sort --version-sort --check &>/dev/null
+   then
+     printf "OK:    %-9s %-6s >= $3\n" "$1" "$v"; return 0;
+   else
+     printf "ERROR: %-9s is TOO OLD ($3 or later required)\n" "$1";
+     return 1;
+   fi
+}
+
+ver_kernel()
+{
+   kver=$(uname -r | grep -E -o '^[0-9\.]+')
+   if printf '%s\n' $1 $kver | sort --version-sort --check &>/dev/null
+   then
+     printf "OK:    Linux Kernel $kver >= $1\n"; return 0;
+   else
+     printf "ERROR: Linux Kernel ($kver) is TOO OLD ($1 or later required)\n" "$kver";
+     return 1;
+   fi
+}
+
+# Coreutils first because --version-sort needs Coreutils >= 7.0
+if sort --version |& grep -q uutils; then
+    ver_check Coreutils  sort     0.8 || bail "Uutils Coreutils too old, stop"
+else
+    ver_check Coreutils  sort     8.1 || bail "GNU Coreutils too old, stop"
+fi
+ver_check Bash           bash     3.2
+ver_check Binutils       ld       2.13.1
+ver_check Bison          bison    2.7
+ver_check Diffutils      diff     2.8.1
+bash version-check.shports $(nproc) logical cores are available"ut"
+OK:    Coreutils 9.5    >= 8.1
+OK:    Bash      5.2.26 >= 3.2
+OK:    Binutils  2.41   >= 2.13.1
+OK:    Bison     3.8.2  >= 2.7
+OK:    Diffutils 3.10   >= 2.8.1
+OK:    Findutils 4.10.0 >= 4.2.31
+OK:    Gawk      5.3.0  >= 4.0.1
+OK:    GCC       14.3.1 >= 5.4
+OK:    GCC (C++) 14.3.1 >= 5.4
+OK:    Grep      3.11   >= 2.5.1a
+OK:    Gzip      1.13   >= 1.3.12
+OK:    M4        1.4.19 >= 1.4.10
+OK:    Make      4.4.1  >= 4.0
+OK:    Patch     2.7.6  >= 2.5.4
+OK:    Perl      5.40.2 >= 5.8.8
+OK:    Python    3.12.15 >= 3.4
+OK:    Sed       4.9    >= 4.1.5
+OK:    Tar       1.35   >= 1.22
+OK:    Texinfo   7.1    >= 5.0
+OK:    Xz        5.6.2  >= 5.0.0
+OK:    Linux Kernel 6.12.0 >= 5.10
+OK:    Linux Kernel supports UNIX 98 PTY
+Aliases:
+OK:    awk  is GNU
+ERROR: yacc is NOT Bison
+OK:    sh   is Bash
+Compiler check:
+OK:    g++ works
+OK: nproc reports 4 logical cores are available
+[cbasualdo@localhost ~]$ bash version-check.sh
+OK:    Coreutils 9.5    >= 8.1
+OK:    Bash      5.2.26 >= 3.2
+OK:    Binutils  2.41   >= 2.13.1
+OK:    Bison     3.8.2  >= 2.7
+OK:    Diffutils 3.10   >= 2.8.1
+OK:    Findutils 4.10.0 >= 4.2.31
+OK:    Gawk      5.3.0  >= 4.0.1
+OK:    GCC       14.3.1 >= 5.4
+OK:    GCC (C++) 14.3.1 >= 5.4
+OK:    Grep      3.11   >= 2.5.1a
+OK:    Gzip      1.13   >= 1.3.12
+OK:    M4        1.4.19 >= 1.4.10
+OK:    Make      4.4.1  >= 4.0
+OK:    Patch     2.7.6  >= 2.5.4
+OK:    Perl      5.40.2 >= 5.8.8
+OK:    Python    3.12.15 >= 3.4
+OK:    Sed       4.9    >= 4.1.5
+OK:    Tar       1.35   >= 1.22
+OK:    Texinfo   7.1    >= 5.0
+OK:    Xz        5.6.2  >= 5.0.0
+OK:    Linux Kernel 6.12.0 >= 5.10
+OK:    Linux Kernel supports UNIX 98 PTY
+Aliases:
+OK:    awk  is GNU
+ERROR: yacc is NOT Bison
+OK:    sh   is Bash
+Compiler check:
+OK:    g++ works
+OK: nproc reports 4 logical cores are available
+[cbasualdo@localhost ~]$ apt search bison
+-bash: apt: orden no encontrada
+[cbasualdo@localhost ~]$ sudo tee /usr/bin/yacc > /dev/null << 'EOF'
+#!/bin/sh
+exec /usr/bin/bison -y "$@"
+EOF
+sudo chmod 755 /usr/bin/yacc
+[sudo] contraseña para cbasualdo:
+[cbasualdo@localhost ~]$ bash version-check.sh
+OK:    Coreutils 9.5    >= 8.1
+OK:    Bash      5.2.26 >= 3.2
+OK:    Binutils  2.41   >= 2.13.1
+OK:    Bison     3.8.2  >= 2.7
+OK:    Diffutils 3.10   >= 2.8.1
+OK:    Findutils 4.10.0 >= 4.2.31
+OK:    Gawk      5.3.0  >= 4.0.1
+OK:    GCC       14.3.1 >= 5.4
+OK:    GCC (C++) 14.3.1 >= 5.4
+OK:    Grep      3.11   >= 2.5.1a
+OK:    Gzip      1.13   >= 1.3.12
+OK:    M4        1.4.19 >= 1.4.10
+OK:    Make      4.4.1  >= 4.0
+OK:    Patch     2.7.6  >= 2.5.4
+OK:    Perl      5.40.2 >= 5.8.8
+OK:    Python    3.12.15 >= 3.4
+OK:    Sed       4.9    >= 4.1.5
+OK:    Tar       1.35   >= 1.22
+OK:    Texinfo   7.1    >= 5.0
+OK:    Xz        5.6.2  >= 5.0.0
+OK:    Linux Kernel 6.12.0 >= 5.10
+OK:    Linux Kernel supports UNIX 98 PTY
+Aliases:
+OK:    awk  is GNU
+OK:    yacc is Bison
+OK:    sh   is Bash
+Compiler check:
+OK:    g++ works
+OK: nproc reports 4 logical cores are available
+[cbasualdo@localhost ~]$ bash version-check.sh 2>&1 | tee ~/evidencias/version-check.txt
+OK:    Coreutils 9.5    >= 8.1
+OK:    Bash      5.2.26 >= 3.2
+OK:    Binutils  2.41   >= 2.13.1
+OK:    Bison     3.8.2  >= 2.7
+OK:    Diffutils 3.10   >= 2.8.1
+OK:    Findutils 4.10.0 >= 4.2.31
+OK:    Gawk      5.3.0  >= 4.0.1
+OK:    GCC       14.3.1 >= 5.4
+OK:    GCC (C++) 14.3.1 >= 5.4
+OK:    Grep      3.11   >= 2.5.1a
+OK:    Gzip      1.13   >= 1.3.12
+OK:    M4        1.4.19 >= 1.4.10
+OK:    Make      4.4.1  >= 4.0
+OK:    Patch     2.7.6  >= 2.5.4
+OK:    Perl      5.40.2 >= 5.8.8
+OK:    Python    3.12.15 >= 3.4
+OK:    Sed       4.9    >= 4.1.5
+OK:    Tar       1.35   >= 1.22
+OK:    Texinfo   7.1    >= 5.0
+OK:    Xz        5.6.2  >= 5.0.0
+OK:    Linux Kernel 6.12.0 >= 5.10
+OK:    Linux Kernel supports UNIX 98 PTY
+Aliases:
+OK:    awk  is GNU
+OK:    yacc is Bison
+OK:    sh   is Bash
+Compiler check:
+OK:    g++ works
+OK: nproc reports 4 logical cores are available
+[cbasualdo@localhost ~]$

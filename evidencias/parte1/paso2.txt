@@ -1,0 +1,2070 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Windows\System32> ssh cbasualdo@192.168.56.101
+cbasualdo@192.168.56.101's password:
+Last login: Wed Oct 14 17:59:11 2026 from 192.168.56.1
+[cbasualdo@localhost ~]$ sudo dnf install -y dnf-plugins-core
+[sudo] contraseña para cbasualdo:
+Última comprobación de caducidad de metadatos hecha hace 0:11:02, el mié 14 oct 2026 18:02:24.
+El paquete dnf-plugins-core-4.7.0-10.el10.noarch ya está instalado.
+Dependencias resueltas.
+Nada por hacer.
+¡Listo!
+[cbasualdo@localhost ~]$ sudo dnf config-manager --set-enabled crb
+[cbasualdo@localhost ~]$ dnf repolist | grep -i crb
+crb                                 Rocky Linux 10 - CRB
+[cbasualdo@localhost ~]$ sudo dnf groupinstall -y "Development Tools"
+Rocky Linux 10 - BaseOS                     3.5 kB/s | 4.3 kB     00:01
+Rocky Linux 10 - BaseOS                      13 MB/s |  37 MB     00:02
+Rocky Linux 10 - AppStream                  3.1 kB/s | 4.4 kB     00:01
+Rocky Linux 10 - CRB                        301 kB/s | 558 kB     00:01
+Dependencias resueltas.
+============================================================================
+ Paquete                   Arq.   Versión                   Repositorio
+                                                                       Tam.
+============================================================================
+Instalando los paquetes del grupo/módulo:
+ asciidoc                  noarch 10.2.0-12.el10            appstream 427 k
+ autoconf                  noarch 2.71-13.el10              appstream 737 k
+ automake                  noarch 1.16.5-20.el10            appstream 704 k
+ binutils                  x86_64 2.41-63.el10              baseos    6.4 M
+ bison                     x86_64 3.8.2-9.el10              appstream 1.0 M
+ byacc                     x86_64 2.0.20230521-7.el10       appstream 115 k
+ diffstat                  x86_64 1.66-3.el10               appstream  45 k
+ flex                      x86_64 2.6.4-19.el10             appstream 300 k
+ gcc                       x86_64 14.3.1-4.4.el10           appstream  38 M
+ gcc-c++                   x86_64 14.3.1-4.4.el10           appstream  15 M
+ gdb                       x86_64 16.3-3.1.el10_2           appstream 133 k
+ git                       x86_64 2.52.0-1.el10             appstream  40 k
+ glibc-devel               x86_64 2.39-142.el10_2           appstream 471 k
+ intltool                  noarch 0.51.0-29.el10            appstream  55 k
+ jna                       x86_64 5.14.0-7.el10             appstream 286 k
+ libtool                   x86_64 2.4.7-14.el10             appstream 601 k
+ ltrace                    x86_64 0.7.91-53.el10            appstream 133 k
+ make                      x86_64 1:4.4.1-9.el10            baseos    590 k
+ patchutils                x86_64 0.4.2-15.el10             appstream 110 k
+ perl-Fedora-VSP           noarch 0.001-36.el10             appstream  23 k
+ perl-generators           noarch 1.16-7.el10               appstream  16 k
+ pesign                    x86_64 116-6.el10                appstream 195 k
+ pkgconf                   x86_64 2.1.0-3.el10              baseos     44 k
+ pkgconf-m4                noarch 2.1.0-3.el10              baseos     14 k
+ pkgconf-pkg-config        x86_64 2.1.0-3.el10              baseos    9.8 k
+ redhat-rpm-config         noarch 295-1.el10.rocky.0.2      appstream  77 k
+ rpm-build                 x86_64 4.19.1.1-23.el10          appstream  76 k
+ rpm-sign                  x86_64 4.19.1.1-23.el10          baseos     20 k
+ source-highlight          x86_64 3.1.9-25.el10             appstream 782 k
+ strace                    x86_64 6.12-3.el10               baseos    1.4 M
+ systemtap                 x86_64 5.4-3.el10                appstream 9.7 k
+ valgrind                  x86_64 1:3.26.0-5.el10           appstream 3.9 M
+ valgrind-devel            x86_64 1:3.26.0-5.el10           appstream  50 k
+Instalando dependencias:
+ adobe-mappings-cmap       noarch 20230622-5.el10           appstream 2.1 M
+ adobe-mappings-cmap-deprecated
+                           noarch 20230622-5.el10           appstream 114 k
+ adobe-mappings-pdf        noarch 20190401-9.el10           appstream 689 k
+ annobin-docs              noarch 13.02-2.el10              appstream  87 k
+ annobin-plugin-gcc        x86_64 13.02-2.el10              appstream 997 k
+ avahi-libs                x86_64 0.9~rc2-2.el10_0          baseos     67 k
+ binutils-gold             x86_64 2.41-63.el10              baseos    795 k
+ boost-atomic              x86_64 1.83.0-7.el10             appstream  15 k
+ boost-filesystem          x86_64 1.83.0-7.el10             appstream  67 k
+ boost-regex               x86_64 1.83.0-7.el10             appstream 109 k
+ boost-system              x86_64 1.83.0-7.el10             appstream  11 k
+ boost-thread              x86_64 1.83.0-7.el10             appstream  59 k
+ bzip2                     x86_64 1.0.8-25.el10             baseos     50 k
+ cairo                     x86_64 1.18.2-2.el10_2.1         appstream 715 k
+ cairo-gobject             x86_64 1.18.2-2.el10_2.1         appstream  16 k
+ cmake-filesystem          x86_64 3.31.8-1.el10             appstream  13 k
+ cpp                       x86_64 14.3.1-4.4.el10           appstream  13 M
+ cups-filesystem           noarch 1:2.4.10-18.el10_2        baseos     11 k
+ cups-libs                 x86_64 1:2.4.10-18.el10_2        baseos    260 k
+ debugedit                 x86_64 5.1-8.el10                appstream  79 k
+ default-fonts-core-sans   noarch 4.1-3.el10                baseos     33 k
+ docbook-dtds              noarch 1.0-92.el10               appstream 356 k
+ docbook-style-xsl         noarch 1.79.2-30.el10            appstream 1.6 M
+ dwz                       x86_64 0.16-1.el10               appstream 139 k
+ dyninst                   x86_64 13.0.0-1.el10             appstream 3.8 M
+ ed                        x86_64 1.20-5.el10               baseos     82 k
+ efi-srpm-macros           noarch 6-7.el10.rocky.0.1        appstream  22 k
+ efivar-libs               x86_64 39-3.el10                 baseos    127 k
+ elfutils                  x86_64 0.194-2.el10.rocky.0.1    baseos    569 k
+ elfutils-devel            x86_64 0.194-2.el10.rocky.0.1    appstream  49 k
+ elfutils-libelf-devel     x86_64 0.194-2.el10.rocky.0.1    appstream  83 k
+ emacs-filesystem          noarch 1:29.4-13.el10_2          baseos    8.5 k
+ fontconfig                x86_64 2.15.0-7.el10             appstream 273 k
+ fonts-filesystem          noarch 1:2.0.5-18.el10           baseos    7.8 k
+ fonts-srpm-macros         noarch 1:2.0.5-18.el10           appstream  26 k
+ forge-srpm-macros         noarch 0.4.0-6.el10              appstream  20 k
+ freetype                  x86_64 2.13.2-8.el10             baseos    408 k
+ fribidi                   x86_64 1.0.14-4.el10             appstream  92 k
+ gcc-plugin-annobin        x86_64 14.3.1-4.4.el10           appstream  63 k
+ gd                        x86_64 2.3.3-22.el10             appstream 133 k
+ gdb-headless              x86_64 16.3-3.1.el10_2           appstream 5.0 M
+ gdk-pixbuf2               x86_64 2.42.12-4.el10_1.5        appstream 471 k
+ gettext                   x86_64 0.22.5-6.el10             baseos    1.1 M
+ gettext-common-devel      noarch 0.22.5-6.el10             appstream 595 k
+ gettext-devel             x86_64 0.22.5-6.el10             appstream 242 k
+ git-core                  x86_64 2.52.0-1.el10             appstream 5.1 M
+ git-core-doc              noarch 2.52.0-1.el10             appstream 3.2 M
+ gnupg2                    x86_64 2.4.5-4.el10_1            baseos    2.7 M
+ go-srpm-macros            noarch 3.8.0-1.el10              appstream  27 k
+ google-droid-sans-fonts   noarch 20200215-22.el10          appstream 2.7 M
+ google-noto-fonts-common  noarch 20240401-5.el10           baseos     17 k
+ google-noto-sans-vf-fonts noarch 20240401-5.el10           baseos    593 k
+ gpgme                     x86_64 1.23.2-6.el10             baseos    218 k
+ gpgmepp                   x86_64 1.23.2-6.el10             appstream 140 k
+ graphite2                 x86_64 1.3.14-17.el10            baseos     95 k
+ graphviz                  x86_64 9.0.0-15.el10             appstream 1.5 M
+ harfbuzz                  x86_64 8.4.0-6.el10              baseos    1.0 M
+ javapackages-filesystem   noarch 6.4.0-1.el10              appstream  12 k
+ jbig2dec-libs             x86_64 0.20-7.el10               appstream  75 k
+ jbigkit-libs              x86_64 2.1-31.el10               appstream  53 k
+ kernel-headers            x86_64 6.12.0-211.65.1.el10_2    appstream 3.4 M
+ kernel-srpm-macros        noarch 1.0-27.el10               appstream 8.9 k
+ lcms2                     x86_64 2.16-6.el10               appstream 181 k
+ libX11                    x86_64 1.8.10-1.el10             appstream 652 k
+ libX11-common             noarch 1.8.10-1.el10             appstream 188 k
+ libXau                    x86_64 1.0.11-8.el10             appstream  32 k
+ libXext                   x86_64 1.3.6-3.el10              appstream  39 k
+ libXft                    x86_64 2.3.8-8.el10              appstream  72 k
+ libXpm                    x86_64 3.5.17-5.el10             appstream  66 k
+ libXrender                x86_64 0.9.11-8.el10             appstream  28 k
+ libassuan                 x86_64 2.5.6-6.el10              baseos     68 k
+ libbabeltrace             x86_64 1.5.11-9.el10             appstream 190 k
+ libdatrie                 x86_64 0.2.13-11.el10            appstream  32 k
+ libgcrypt                 x86_64 1.11.0-7.el10_2           baseos    586 k
+ libgpg-error              x86_64 1.50-2.el10               baseos    239 k
+ libgs                     x86_64 10.02.1-16.el10_2.1       appstream 3.4 M
+ libicu                    x86_64 74.2-5.el10_0             baseos     10 M
+ libijs                    x86_64 0.35-24.el10              appstream  29 k
+ libipt                    x86_64 2.1-5.el10                appstream  57 k
+ libjpeg-turbo             x86_64 3.0.2-4.el10              appstream 251 k
+ libksba                   x86_64 1.6.7-2.el10              baseos    158 k
+ liblerc                   x86_64 4.0.0-8.el10              appstream 218 k
+ libmpc                    x86_64 1.3.1-7.el10              appstream  70 k
+ libpaper                  x86_64 1:2.1.1-7.el10            appstream  27 k
+ libpkgconf                x86_64 2.1.0-3.el10              baseos     38 k
+ libpng                    x86_64 2:1.6.40-11.el10_2.1      baseos    120 k
+ librsvg2                  x86_64 2.57.1-9.el10             appstream 1.5 M
+ libstdc++-devel           x86_64 14.3.1-4.4.el10           appstream 2.8 M
+ libthai                   x86_64 0.1.29-10.el10            appstream 214 k
+ libtiff                   x86_64 4.6.0-8.el10_2.4          appstream 214 k
+ libtool-ltdl              x86_64 2.4.7-14.el10             appstream  35 k
+ libwebp                   x86_64 1.3.2-10.el10             appstream 287 k
+ libxcb                    x86_64 1.17.0-3.el10             appstream 241 k
+ libxcrypt-devel           x86_64 4.4.36-10.el10            appstream  29 k
+ libxslt                   x86_64 1.1.39-8.el10_2.1         appstream 189 k
+ libzstd-devel             x86_64 1.5.5-9.el10              appstream  51 k
+ lua-srpm-macros           noarch 1-15.el10                 appstream 8.8 k
+ m4                        x86_64 1.4.19-11.el10            appstream 308 k
+ mailcap                   noarch 2.1.54-8.el10             baseos     34 k
+ mokutil                   x86_64 2:0.7.2-4.el10            baseos     49 k
+ npth                      x86_64 1.6-21.el10               baseos     25 k
+ nspr                      x86_64 4.39.0-5.el10_2           appstream 136 k
+ nss                       x86_64 3.124.0-5.el10_2          appstream 743 k
+ nss-softokn               x86_64 3.124.0-5.el10_2          appstream 415 k
+ nss-softokn-freebl        x86_64 3.124.0-5.el10_2          appstream 386 k
+ nss-sysinit               x86_64 3.124.0-5.el10_2          appstream  19 k
+ nss-tools                 x86_64 3.124.0-5.el10_2          appstream 440 k
+ nss-util                  x86_64 3.124.0-5.el10_2          appstream  86 k
+ ocaml-srpm-macros         noarch 10-4.el10                 appstream 9.2 k
+ openblas-srpm-macros      noarch 2-19.el10                 appstream 7.7 k
+ openjpeg2                 x86_64 2.5.2-5.el10              appstream 188 k
+ openssl-devel             x86_64 1:3.5.8-2.el10_2          appstream 2.9 M
+ package-notes-srpm-macros noarch 0.5-13.el10               appstream 9.2 k
+ pango                     x86_64 1.54.0-3.el10             appstream 353 k
+ patch                     x86_64 2.7.6-26.el10             appstream 131 k
+ perl-AutoLoader           noarch 5.74-515.el10_2           appstream  20 k
+ perl-B                    x86_64 1.89-515.el10_2           appstream 175 k
+ perl-Carp                 noarch 1.54-511.el10             appstream  29 k
+ perl-Class-Struct         noarch 0.68-515.el10_2           appstream  20 k
+ perl-Clone                x86_64 0.46-10.el10              appstream  22 k
+ perl-Compress-Raw-Bzip2   x86_64 2.212-512.el10            appstream  35 k
+ perl-Compress-Raw-Zlib    x86_64 2.212-513.el10_1          appstream  64 k
+ perl-Data-Dump            noarch 1.25-13.el10              appstream  32 k
+ perl-Data-Dumper          x86_64 2.189-512.el10            appstream  56 k
+ perl-Digest               noarch 1.20-511.el10             appstream  25 k
+ perl-Digest-HMAC          noarch 1.04-12.el10              appstream  22 k
+ perl-Digest-MD5           x86_64 2.59-6.el10               appstream  36 k
+ perl-Digest-SHA           x86_64 1:6.04-512.el10           appstream  62 k
+ perl-DynaLoader           x86_64 1.56-515.el10_2           appstream  24 k
+ perl-Encode               x86_64 4:3.21-511.el10           appstream 1.1 M
+ perl-Encode-Locale        noarch 1.05-31.el10              appstream  18 k
+ perl-Errno                x86_64 1.38-515.el10_2           appstream  13 k
+ perl-Error                noarch 1:0.17029-18.el10         appstream  40 k
+ perl-Exporter             noarch 5.78-511.el10             appstream  31 k
+ perl-Fcntl                x86_64 1.18-515.el10_2           appstream  28 k
+ perl-File-Basename        noarch 2.86-515.el10_2           appstream  16 k
+ perl-File-Compare         noarch 1.100.800-515.el10_2      appstream  12 k
+ perl-File-Copy            noarch 2.41-515.el10_2           appstream  19 k
+ perl-File-Find            noarch 1.44-515.el10_2           appstream  24 k
+ perl-File-Listing         noarch 6.16-5.el10               appstream  25 k
+ perl-File-Path            noarch 2.18-512.el10             appstream  35 k
+ perl-File-Temp            noarch 1:0.231.100-512.el10      appstream  59 k
+ perl-File-stat            noarch 1.14-515.el10_2           appstream  15 k
+ perl-FileHandle           noarch 2.05-515.el10_2           appstream  14 k
+ perl-Getopt-Long          noarch 1:2.58-3.el10             appstream  64 k
+ perl-Getopt-Std           noarch 1.14-515.el10_2           appstream  14 k
+ perl-Git                  noarch 2.52.0-1.el10             appstream  37 k
+ perl-HTML-Parser          x86_64 3.82-3.el10               appstream 126 k
+ perl-HTML-Tagset          noarch 3.20-59.el10              appstream  18 k
+ perl-HTTP-Cookies         noarch 6.11-5.el10               appstream  37 k
+ perl-HTTP-Date            noarch 6.06-6.el10               appstream  24 k
+ perl-HTTP-Message         noarch 6.45-5.el10               appstream 101 k
+ perl-HTTP-Negotiate       noarch 6.01-40.el10              appstream  20 k
+ perl-HTTP-Tiny            noarch 0.088-512.el10            appstream  56 k
+ perl-I18N-Langinfo        x86_64 0.24-515.el10_2           appstream  24 k
+ perl-IO                   x86_64 1.55-515.el10_2           appstream  76 k
+ perl-IO-Compress          noarch 2.212-512.el10_2.1        appstream 291 k
+ perl-IO-HTML              noarch 1.004-14.el10             appstream  27 k
+ perl-IO-Socket-IP         noarch 0.42-512.el10             appstream  42 k
+ perl-IO-Socket-SSL        noarch 2.085-3.el10              appstream 229 k
+ perl-IPC-Open3            noarch 1.22-515.el10_2           appstream  20 k
+ perl-LWP-MediaTypes       noarch 6.04-19.el10              appstream  33 k
+ perl-MIME-Base64          x86_64 3.16-511.el10             appstream  30 k
+ perl-Module-Load          noarch 1:0.36-511.el10           appstream  17 k
+ perl-Mozilla-CA           noarch 20231213-5.el10           appstream  14 k
+ perl-NTLM                 noarch 1.09-41.el10              appstream  22 k
+ perl-Net-HTTP             noarch 6.23-6.el10               appstream  39 k
+ perl-Net-SSLeay           x86_64 1.94-8.el10               appstream 382 k
+ perl-POSIX                x86_64 2.20-515.el10_2           appstream  95 k
+ perl-PathTools            x86_64 3.91-512.el10             appstream  88 k
+ perl-Pod-Escapes          noarch 1:1.07-511.el10           appstream  20 k
+ perl-Pod-Perldoc          noarch 3.28.01-512.el10          appstream  87 k
+ perl-Pod-Simple           noarch 1:3.45-511.el10           appstream 221 k
+ perl-Pod-Usage            noarch 4:2.03-511.el10           appstream  40 k
+ perl-Scalar-List-Utils    x86_64 5:1.63-511.el10           appstream  73 k
+ perl-SelectSaver          noarch 1.02-515.el10_2           appstream  10 k
+ perl-Socket               x86_64 4:2.038-511.el10          appstream  55 k
+ perl-Storable             x86_64 1:3.32-511.el10           appstream  98 k
+ perl-Symbol               noarch 1.09-515.el10_2           appstream  13 k
+ perl-Term-ANSIColor       noarch 5.01-512.el10             appstream  48 k
+ perl-Term-Cap             noarch 1.18-511.el10             appstream  22 k
+ perl-TermReadKey          x86_64 2.38-24.el10              appstream  36 k
+ perl-Text-ParseWords      noarch 3.31-511.el10             appstream  16 k
+ perl-Text-Tabs+Wrap       noarch 2024.001-511.el10         appstream  22 k
+ perl-Thread-Queue         noarch 3.14-511.el10             appstream  21 k
+ perl-Time-Local           noarch 2:1.350-511.el10          appstream  34 k
+ perl-TimeDate             noarch 1:2.33-16.el10            appstream  60 k
+ perl-Try-Tiny             noarch 0.31-12.el10              appstream  42 k
+ perl-URI                  noarch 5.27-3.el10               appstream 136 k
+ perl-WWW-RobotRules       noarch 6.02-41.el10              appstream  20 k
+ perl-XML-Parser           x86_64 2.47-6.1.el10_1           appstream 228 k
+ perl-base                 noarch 2.27-515.el10_2           appstream  15 k
+ perl-constant             noarch 1.33-512.el10             appstream  23 k
+ perl-if                   noarch 0.61.000-515.el10_2       appstream  12 k
+ perl-interpreter          x86_64 4:5.40.2-515.el10_2       appstream  71 k
+ perl-lib                  x86_64 0.65-515.el10_2           appstream  13 k
+ perl-libnet               noarch 3.15-512.el10             appstream 130 k
+ perl-libs                 x86_64 4:5.40.2-515.el10_2       appstream 2.2 M
+ perl-libwww-perl          noarch 6.76-3.el10               appstream 210 k
+ perl-locale               noarch 1.12-515.el10_2           appstream  12 k
+ perl-macros               noarch 4:5.40.2-515.el10_2       appstream  11 k
+ perl-mro                  x86_64 1.29-515.el10_2           appstream  28 k
+ perl-overload             noarch 1.37-515.el10_2           appstream  44 k
+ perl-overloading          noarch 0.02-515.el10_2           appstream  11 k
+ perl-parent               noarch 1:0.241-512.el10          appstream  15 k
+ perl-podlators            noarch 1:5.01-511.el10           appstream 126 k
+ perl-srpm-macros          noarch 1-57.el10                 appstream 8.5 k
+ perl-subs                 noarch 1.04-515.el10_2           appstream  10 k
+ perl-threads              x86_64 1:2.40-511.el10           appstream  58 k
+ perl-threads-shared       x86_64 1.69-511.el10             appstream  45 k
+ perl-vars                 noarch 1.05-515.el10_2           appstream  11 k
+ pixman                    x86_64 0.43.4-2.el10             appstream 285 k
+ poppler                   x86_64 24.02.0-7.el10_2.2        appstream 1.2 M
+ poppler-data              noarch 0.4.11-9.el10             appstream 2.0 M
+ poppler-glib              x86_64 24.02.0-7.el10_2.2        appstream 191 k
+ pyproject-srpm-macros     noarch 1.18.5-1.el10             appstream  13 k
+ python-srpm-macros        noarch 3.12-11.el10              appstream  23 k
+ qt6-srpm-macros           noarch 6.10.1-1.el10             appstream 9.3 k
+ redhat-text-vf-fonts      noarch 4.1.0-1.el10              baseos    353 k
+ rsvg-pixbuf-loader        x86_64 2.57.1-9.el10             appstream  15 k
+ rust-toolset-srpm-macros  noarch 1.92.0-2.el10_2           appstream 9.7 k
+ sgml-common               noarch 0.6.3-65.el10             appstream  63 k
+ shared-mime-info          x86_64 2.3-8.el10                baseos    396 k
+ systemd-rpm-macros        noarch 257-23.el10_2.2.rocky.0.1 baseos     41 k
+ systemtap-client          x86_64 5.4-3.el10                appstream 4.2 M
+ systemtap-devel           x86_64 5.4-3.el10                appstream 2.5 M
+ systemtap-runtime         x86_64 5.4-3.el10                appstream 468 k
+ tar                       x86_64 2:1.35-13.el10_2          baseos    858 k
+ tbb                       x86_64 2021.11.0-7.el10          appstream 165 k
+ unzip                     x86_64 6.0-69.el10               baseos    188 k
+ urw-base35-bookman-fonts  noarch 20200910-21.el10          appstream 846 k
+ urw-base35-c059-fonts     noarch 20200910-21.el10          appstream 874 k
+ urw-base35-d050000l-fonts noarch 20200910-21.el10          appstream  75 k
+ urw-base35-fonts          noarch 20200910-21.el10          appstream 9.6 k
+ urw-base35-fonts-common   noarch 20200910-21.el10          appstream  20 k
+ urw-base35-gothic-fonts   noarch 20200910-21.el10          appstream 642 k
+ urw-base35-nimbus-mono-ps-fonts
+                           noarch 20200910-21.el10          appstream 794 k
+ urw-base35-nimbus-roman-fonts
+                           noarch 20200910-21.el10          appstream 855 k
+ urw-base35-nimbus-sans-fonts
+                           noarch 20200910-21.el10          appstream 1.3 M
+ urw-base35-p052-fonts     noarch 20200910-21.el10          appstream 973 k
+ urw-base35-standard-symbols-ps-fonts
+                           noarch 20200910-21.el10          appstream  41 k
+ urw-base35-z003-fonts     noarch 20200910-21.el10          appstream 275 k
+ xml-common                noarch 0.6.3-65.el10             appstream  31 k
+ xz-devel                  x86_64 1:5.6.2-4.el10_2.1        appstream  61 k
+ zip                       x86_64 3.0-45.el10               baseos    271 k
+ zlib-ng-compat-devel      x86_64 2.2.3-3.el10_1            appstream  36 k
+ zstd                      x86_64 1.5.5-9.el10              baseos    462 k
+Instalando dependencias débiles:
+ elfutils-debuginfod-client-devel
+                           x86_64 0.194-2.el10.rocky.0.1    appstream  16 k
+ kernel-devel              x86_64 6.12.0-211.65.1.el10_2    appstream  19 M
+ perl-NDBM_File            x86_64 1.17-515.el10_2           appstream  21 k
+ perl-version              x86_64 8:0.99.32-4.el10          appstream  63 k
+ valgrind-docs             x86_64 1:3.26.0-5.el10           appstream 1.5 M
+ valgrind-gdb              x86_64 1:3.26.0-5.el10           appstream 132 k
+ valgrind-scripts          x86_64 1:3.26.0-5.el10           appstream  68 k
+Instalando grupos:
+ Development Tools
+
+Resumen de la transacción
+============================================================================
+Instalar  287 Paquetes
+
+Tamaño total de la descarga: 206 M
+Tamaño instalado: 709 M
+Descargando paquetes:
+(1/287): avahi-libs-0.9~rc2-2.el10_0.x86_64 208 kB/s |  67 kB     00:00
+(2/287): bzip2-1.0.8-25.el10.x86_64.rpm     379 kB/s |  50 kB     00:00
+(3/287): binutils-gold-2.41-63.el10.x86_64. 1.6 MB/s | 795 kB     00:00
+(4/287): cups-filesystem-2.4.10-18.el10_2.n  86 kB/s |  11 kB     00:00
+(5/287): cups-libs-2.4.10-18.el10_2.x86_64. 1.0 MB/s | 260 kB     00:00
+(6/287): default-fonts-core-sans-4.1-3.el10 176 kB/s |  33 kB     00:00
+(7/287): binutils-2.41-63.el10.x86_64.rpm   7.4 MB/s | 6.4 MB     00:00
+(8/287): ed-1.20-5.el10.x86_64.rpm          432 kB/s |  82 kB     00:00
+(9/287): efivar-libs-39-3.el10.x86_64.rpm   642 kB/s | 127 kB     00:00
+(10/287): elfutils-0.194-2.el10.rocky.0.1.x 2.2 MB/s | 569 kB     00:00
+(11/287): emacs-filesystem-29.4-13.el10_2.n  50 kB/s | 8.5 kB     00:00
+(12/287): fonts-filesystem-2.0.5-18.el10.no  53 kB/s | 7.8 kB     00:00
+(13/287): gettext-0.22.5-6.el10.x86_64.rpm  4.4 MB/s | 1.1 MB     00:00
+(14/287): freetype-2.13.2-8.el10.x86_64.rpm 1.5 MB/s | 408 kB     00:00
+(15/287): gnupg2-2.4.5-4.el10_1.x86_64.rpm  6.6 MB/s | 2.7 MB     00:00
+(16/287): google-noto-fonts-common-20240401 103 kB/s |  17 kB     00:00
+(17/287): google-noto-sans-vf-fonts-2024040 2.5 MB/s | 593 kB     00:00
+(18/287): gpgme-1.23.2-6.el10.x86_64.rpm    1.2 MB/s | 218 kB     00:00
+(19/287): graphite2-1.3.14-17.el10.x86_64.r 508 kB/s |  95 kB     00:00
+(20/287): harfbuzz-8.4.0-6.el10.x86_64.rpm  4.2 MB/s | 1.0 MB     00:00
+(21/287): libassuan-2.5.6-6.el10.x86_64.rpm 352 kB/s |  68 kB     00:00
+(22/287): libgcrypt-1.11.0-7.el10_2.x86_64. 2.1 MB/s | 586 kB     00:00
+(23/287): libgpg-error-1.50-2.el10.x86_64.r 1.1 MB/s | 239 kB     00:00
+(24/287): libpkgconf-2.1.0-3.el10.x86_64.rp  88 kB/s |  38 kB     00:00
+(25/287): libksba-1.6.7-2.el10.x86_64.rpm   272 kB/s | 158 kB     00:00
+(26/287): libicu-74.2-5.el10_0.x86_64.rpm    13 MB/s |  10 MB     00:00
+(27/287): mailcap-2.1.54-8.el10.noarch.rpm  231 kB/s |  34 kB     00:00
+(28/287): libpng-1.6.40-11.el10_2.1.x86_64. 464 kB/s | 120 kB     00:00
+(29/287): mokutil-0.7.2-4.el10.x86_64.rpm   472 kB/s |  49 kB     00:00
+(30/287): npth-1.6-21.el10.x86_64.rpm       182 kB/s |  25 kB     00:00
+(31/287): make-4.4.1-9.el10.x86_64.rpm      2.6 MB/s | 590 kB     00:00
+(32/287): pkgconf-2.1.0-3.el10.x86_64.rpm   390 kB/s |  44 kB     00:00
+(33/287): pkgconf-m4-2.1.0-3.el10.noarch.rp 138 kB/s |  14 kB     00:00
+(34/287): pkgconf-pkg-config-2.1.0-3.el10.x  92 kB/s | 9.8 kB     00:00
+(35/287): rpm-sign-4.19.1.1-23.el10.x86_64. 122 kB/s |  20 kB     00:00
+(36/287): redhat-text-vf-fonts-4.1.0-1.el10 1.6 MB/s | 353 kB     00:00
+(37/287): shared-mime-info-2.3-8.el10.x86_6 1.8 MB/s | 396 kB     00:00
+(38/287): systemd-rpm-macros-257-23.el10_2. 357 kB/s |  41 kB     00:00
+(39/287): strace-6.12-3.el10.x86_64.rpm     5.6 MB/s | 1.4 MB     00:00
+(40/287): tar-1.35-13.el10_2.x86_64.rpm     3.3 MB/s | 858 kB     00:00
+(41/287): unzip-6.0-69.el10.x86_64.rpm      793 kB/s | 188 kB     00:00
+(42/287): zip-3.0-45.el10.x86_64.rpm        1.4 MB/s | 271 kB     00:00
+(43/287): zstd-1.5.5-9.el10.x86_64.rpm      2.4 MB/s | 462 kB     00:00
+(44/287): adobe-mappings-cmap-deprecated-20 335 kB/s | 114 kB     00:00
+(45/287): adobe-mappings-pdf-20190401-9.el1 1.8 MB/s | 689 kB     00:00
+(46/287): annobin-docs-13.02-2.el10.noarch. 471 kB/s |  87 kB     00:00
+(47/287): asciidoc-10.2.0-12.el10.noarch.rp 1.7 MB/s | 427 kB     00:00
+(48/287): autoconf-2.71-13.el10.noarch.rpm  2.8 MB/s | 737 kB     00:00
+(49/287): automake-1.16.5-20.el10.noarch.rp 3.4 MB/s | 704 kB     00:00
+(50/287): annobin-plugin-gcc-13.02-2.el10.x 809 kB/s | 997 kB     00:01
+(51/287): adobe-mappings-cmap-20230622-5.el 1.1 MB/s | 2.1 MB     00:01
+(52/287): boost-atomic-1.83.0-7.el10.x86_64 122 kB/s |  15 kB     00:00
+(53/287): bison-3.8.2-9.el10.x86_64.rpm     1.6 MB/s | 1.0 MB     00:00
+(54/287): boost-filesystem-1.83.0-7.el10.x8 318 kB/s |  67 kB     00:00
+(55/287): boost-system-1.83.0-7.el10.x86_64  49 kB/s |  11 kB     00:00
+(56/287): boost-regex-1.83.0-7.el10.x86_64. 347 kB/s | 109 kB     00:00
+(57/287): boost-thread-1.83.0-7.el10.x86_64 430 kB/s |  59 kB     00:00
+(58/287): byacc-2.0.20230521-7.el10.x86_64. 627 kB/s | 115 kB     00:00
+(59/287): cairo-1.18.2-2.el10_2.1.x86_64.rp 3.4 MB/s | 715 kB     00:00
+(60/287): cairo-gobject-1.18.2-2.el10_2.1.x  69 kB/s |  16 kB     00:00
+(61/287): cmake-filesystem-3.31.8-1.el10.x8  91 kB/s |  13 kB     00:00
+(62/287): diffstat-1.66-3.el10.x86_64.rpm   320 kB/s |  45 kB     00:00
+(63/287): debugedit-5.1-8.el10.x86_64.rpm   368 kB/s |  79 kB     00:00
+(64/287): docbook-dtds-1.0-92.el10.noarch.r 353 kB/s | 356 kB     00:01
+(65/287): docbook-style-xsl-1.79.2-30.el10. 1.5 MB/s | 1.6 MB     00:01
+(66/287): cpp-14.3.1-4.4.el10.x86_64.rpm    6.9 MB/s |  13 MB     00:01
+(67/287): dwz-0.16-1.el10.x86_64.rpm        174 kB/s | 139 kB     00:00
+(68/287): efi-srpm-macros-6-7.el10.rocky.0. 110 kB/s |  22 kB     00:00
+(69/287): dyninst-13.0.0-1.el10.x86_64.rpm  4.8 MB/s | 3.8 MB     00:00
+(70/287): elfutils-debuginfod-client-devel- 133 kB/s |  16 kB     00:00
+(71/287): elfutils-devel-0.194-2.el10.rocky 308 kB/s |  49 kB     00:00
+(72/287): elfutils-libelf-devel-0.194-2.el1 414 kB/s |  83 kB     00:00
+(73/287): fontconfig-2.15.0-7.el10.x86_64.r 1.2 MB/s | 273 kB     00:00
+(74/287): flex-2.6.4-19.el10.x86_64.rpm     911 kB/s | 300 kB     00:00
+(75/287): fonts-srpm-macros-2.0.5-18.el10.n 161 kB/s |  26 kB     00:00
+(76/287): forge-srpm-macros-0.4.0-6.el10.no 149 kB/s |  20 kB     00:00
+(77/287): fribidi-1.0.14-4.el10.x86_64.rpm  509 kB/s |  92 kB     00:00
+(78/287): gcc-plugin-annobin-14.3.1-4.4.el1 375 kB/s |  63 kB     00:00
+(79/287): gd-2.3.3-22.el10.x86_64.rpm       670 kB/s | 133 kB     00:00
+(80/287): gdb-16.3-3.1.el10_2.x86_64.rpm    320 kB/s | 133 kB     00:00
+(81/287): gdb-headless-16.3-3.1.el10_2.x86_ 3.7 MB/s | 5.0 MB     00:01
+(82/287): gcc-c++-14.3.1-4.4.el10.x86_64.rp 5.9 MB/s |  15 MB     00:02
+(83/287): gdk-pixbuf2-2.42.12-4.el10_1.5.x8 828 kB/s | 471 kB     00:00
+(84/287): gettext-common-devel-0.22.5-6.el1 2.2 MB/s | 595 kB     00:00
+(85/287): git-2.52.0-1.el10.x86_64.rpm      181 kB/s |  40 kB     00:00
+(86/287): gettext-devel-0.22.5-6.el10.x86_6 631 kB/s | 242 kB     00:00
+(87/287): git-core-2.52.0-1.el10.x86_64.rpm 3.6 MB/s | 5.1 MB     00:01
+(88/287): gcc-14.3.1-4.4.el10.x86_64.rpm    8.0 MB/s |  38 MB     00:04
+(89/287): git-core-doc-2.52.0-1.el10.noarch 2.2 MB/s | 3.2 MB     00:01
+(90/287): go-srpm-macros-3.8.0-1.el10.noarc 218 kB/s |  27 kB     00:00
+(91/287): glibc-devel-2.39-142.el10_2.x86_6 1.3 MB/s | 471 kB     00:00
+(92/287): google-droid-sans-fonts-20200215- 7.2 MB/s | 2.7 MB     00:00
+(93/287): gpgmepp-1.23.2-6.el10.x86_64.rpm  331 kB/s | 140 kB     00:00
+(94/287): graphviz-9.0.0-15.el10.x86_64.rpm 4.0 MB/s | 1.5 MB     00:00
+(95/287): javapackages-filesystem-6.4.0-1.e  94 kB/s |  12 kB     00:00
+(96/287): intltool-0.51.0-29.el10.noarch.rp 140 kB/s |  55 kB     00:00
+(97/287): jbig2dec-libs-0.20-7.el10.x86_64. 259 kB/s |  75 kB     00:00
+(98/287): jbigkit-libs-2.1-31.el10.x86_64.r 237 kB/s |  53 kB     00:00
+(99/287): jna-5.14.0-7.el10.x86_64.rpm      1.3 MB/s | 286 kB     00:00
+(100/287): kernel-srpm-macros-1.0-27.el10.n  17 kB/s | 8.9 kB     00:00
+(101/287): kernel-headers-6.12.0-211.65.1.e 2.9 MB/s | 3.4 MB     00:01
+(102/287): lcms2-2.16-6.el10.x86_64.rpm     323 kB/s | 181 kB     00:00
+(103/287): kernel-devel-6.12.0-211.65.1.el1  12 MB/s |  19 MB     00:01
+(104/287): libX11-1.8.10-1.el10.x86_64.rpm  1.3 MB/s | 652 kB     00:00
+(105/287): libX11-common-1.8.10-1.el10.noar 422 kB/s | 188 kB     00:00
+(106/287): libXau-1.0.11-8.el10.x86_64.rpm  275 kB/s |  32 kB     00:00
+(107/287): libXext-1.3.6-3.el10.x86_64.rpm  305 kB/s |  39 kB     00:00
+(108/287): libXrender-0.9.11-8.el10.x86_64. 223 kB/s |  28 kB     00:00
+(109/287): libXft-2.3.8-8.el10.x86_64.rpm   256 kB/s |  72 kB     00:00
+(110/287): libXpm-3.5.17-5.el10.x86_64.rpm  232 kB/s |  66 kB     00:00
+(111/287): libdatrie-0.2.13-11.el10.x86_64. 272 kB/s |  32 kB     00:00
+(112/287): libbabeltrace-1.5.11-9.el10.x86_ 1.0 MB/s | 190 kB     00:00
+(113/287): libijs-0.35-24.el10.x86_64.rpm   236 kB/s |  29 kB     00:00
+(114/287): libipt-2.1-5.el10.x86_64.rpm     245 kB/s |  57 kB     00:00
+(115/287): libjpeg-turbo-3.0.2-4.el10.x86_6 1.3 MB/s | 251 kB     00:00
+(116/287): libgs-10.02.1-16.el10_2.1.x86_64 8.4 MB/s | 3.4 MB     00:00
+(117/287): libmpc-1.3.1-7.el10.x86_64.rpm   349 kB/s |  70 kB     00:00
+(118/287): libpaper-2.1.1-7.el10.x86_64.rpm 177 kB/s |  27 kB     00:00
+(119/287): liblerc-4.0.0-8.el10.x86_64.rpm  683 kB/s | 218 kB     00:00
+(120/287): librsvg2-2.57.1-9.el10.x86_64.rp 1.5 MB/s | 1.5 MB     00:01
+(121/287): libthai-0.1.29-10.el10.x86_64.rp 216 kB/s | 214 kB     00:00
+(122/287): libstdc++-devel-14.3.1-4.4.el10. 2.4 MB/s | 2.8 MB     00:01
+(123/287): libtiff-4.6.0-8.el10_2.4.x86_64. 726 kB/s | 214 kB     00:00
+(124/287): libtool-2.4.7-14.el10.x86_64.rpm 2.1 MB/s | 601 kB     00:00
+(125/287): libtool-ltdl-2.4.7-14.el10.x86_6 293 kB/s |  35 kB     00:00
+(126/287): libwebp-1.3.2-10.el10.x86_64.rpm 1.5 MB/s | 287 kB     00:00
+(127/287): libxcrypt-devel-4.4.36-10.el10.x 207 kB/s |  29 kB     00:00
+(128/287): libxcb-1.17.0-3.el10.x86_64.rpm  1.3 MB/s | 241 kB     00:00
+(129/287): libzstd-devel-1.5.5-9.el10.x86_6 393 kB/s |  51 kB     00:00
+(130/287): libxslt-1.1.39-8.el10_2.1.x86_64 1.0 MB/s | 189 kB     00:00
+(131/287): lua-srpm-macros-1-15.el10.noarch  70 kB/s | 8.8 kB     00:00
+(132/287): ltrace-0.7.91-53.el10.x86_64.rpm 464 kB/s | 133 kB     00:00
+(133/287): nspr-4.39.0-5.el10_2.x86_64.rpm  785 kB/s | 136 kB     00:00
+(134/287): m4-1.4.19-11.el10.x86_64.rpm     1.0 MB/s | 308 kB     00:00
+(135/287): nss-3.124.0-5.el10_2.x86_64.rpm  3.5 MB/s | 743 kB     00:00
+(136/287): nss-softokn-freebl-3.124.0-5.el1 1.9 MB/s | 386 kB     00:00
+(137/287): nss-softokn-3.124.0-5.el10_2.x86 1.3 MB/s | 415 kB     00:00
+(138/287): nss-sysinit-3.124.0-5.el10_2.x86  83 kB/s |  19 kB     00:00
+(139/287): nss-tools-3.124.0-5.el10_2.x86_6 2.1 MB/s | 440 kB     00:00
+(140/287): nss-util-3.124.0-5.el10_2.x86_64 486 kB/s |  86 kB     00:00
+(141/287): ocaml-srpm-macros-10-4.el10.noar  41 kB/s | 9.2 kB     00:00
+(142/287): openblas-srpm-macros-2-19.el10.n  63 kB/s | 7.7 kB     00:00
+(143/287): openjpeg2-2.5.2-5.el10.x86_64.rp 1.0 MB/s | 188 kB     00:00
+(144/287): package-notes-srpm-macros-0.5-13  31 kB/s | 9.2 kB     00:00
+(145/287): openssl-devel-3.5.8-2.el10_2.x86 9.1 MB/s | 2.9 MB     00:00
+(146/287): pango-1.54.0-3.el10.x86_64.rpm   1.3 MB/s | 353 kB     00:00
+(147/287): patch-2.7.6-26.el10.x86_64.rpm   652 kB/s | 131 kB     00:00
+(148/287): patchutils-0.4.2-15.el10.x86_64. 395 kB/s | 110 kB     00:00
+(149/287): perl-AutoLoader-5.74-515.el10_2.  86 kB/s |  20 kB     00:00
+(150/287): perl-B-1.89-515.el10_2.x86_64.rp 913 kB/s | 175 kB     00:00
+(151/287): perl-Carp-1.54-511.el10.noarch.r 229 kB/s |  29 kB     00:00
+(152/287): perl-Clone-0.46-10.el10.x86_64.r 186 kB/s |  22 kB     00:00
+(153/287): perl-Compress-Raw-Zlib-2.212-513 466 kB/s |  64 kB     00:00
+(154/287): perl-Class-Struct-0.68-515.el10_  53 kB/s |  20 kB     00:00
+(155/287): perl-Compress-Raw-Bzip2-2.212-51 122 kB/s |  35 kB     00:00
+(156/287): perl-Data-Dump-1.25-13.el10.noar 243 kB/s |  32 kB     00:00
+(157/287): perl-Digest-1.20-511.el10.noarch 186 kB/s |  25 kB     00:00
+(158/287): perl-Digest-HMAC-1.04-12.el10.no 189 kB/s |  22 kB     00:00
+(159/287): perl-Data-Dumper-2.189-512.el10. 223 kB/s |  56 kB     00:00
+(160/287): perl-Digest-MD5-2.59-6.el10.x86_ 294 kB/s |  36 kB     00:00
+(161/287): perl-Digest-SHA-6.04-512.el10.x8 462 kB/s |  62 kB     00:00
+(162/287): perl-Encode-Locale-1.05-31.el10. 131 kB/s |  18 kB     00:00
+(163/287): perl-Encode-3.21-511.el10.x86_64 4.8 MB/s | 1.1 MB     00:00
+(164/287): perl-DynaLoader-1.56-515.el10_2. 103 kB/s |  24 kB     00:00
+(165/287): perl-Errno-1.38-515.el10_2.x86_6 105 kB/s |  13 kB     00:00
+(166/287): perl-Exporter-5.78-511.el10.noar 248 kB/s |  31 kB     00:00
+(167/287): perl-Error-0.17029-18.el10.noarc 170 kB/s |  40 kB     00:00
+(168/287): perl-Fcntl-1.18-515.el10_2.x86_6 217 kB/s |  28 kB     00:00
+(169/287): perl-Fedora-VSP-0.001-36.el10.no  94 kB/s |  23 kB     00:00
+(170/287): perl-File-Basename-2.86-515.el10  68 kB/s |  16 kB     00:00
+(171/287): perl-File-Compare-1.100.800-515.  51 kB/s |  12 kB     00:00
+(172/287): perl-File-Copy-2.41-515.el10_2.n 163 kB/s |  19 kB     00:00
+(173/287): perl-File-Listing-6.16-5.el10.no 183 kB/s |  25 kB     00:00
+(174/287): perl-File-Find-1.44-515.el10_2.n 102 kB/s |  24 kB     00:00
+(175/287): perl-File-Path-2.18-512.el10.noa 154 kB/s |  35 kB     00:00
+(176/287): perl-File-stat-1.14-515.el10_2.n 121 kB/s |  15 kB     00:00
+(177/287): perl-File-Temp-0.231.100-512.el1 258 kB/s |  59 kB     00:00
+(178/287): perl-FileHandle-2.05-515.el10_2.  60 kB/s |  14 kB     00:00
+(179/287): perl-Getopt-Long-2.58-3.el10.noa 490 kB/s |  64 kB     00:00
+(180/287): perl-Getopt-Std-1.14-515.el10_2.  62 kB/s |  14 kB     00:00
+(181/287): perl-Git-2.52.0-1.el10.noarch.rp 156 kB/s |  37 kB     00:00
+(182/287): perl-HTML-Tagset-3.20-59.el10.no 141 kB/s |  18 kB     00:00
+(183/287): perl-HTML-Parser-3.82-3.el10.x86 437 kB/s | 126 kB     00:00
+(184/287): perl-HTTP-Date-6.06-6.el10.noarc 208 kB/s |  24 kB     00:00
+(185/287): perl-HTTP-Cookies-6.11-5.el10.no 157 kB/s |  37 kB     00:00
+(186/287): perl-HTTP-Message-6.45-5.el10.no 564 kB/s | 101 kB     00:00
+(187/287): perl-HTTP-Negotiate-6.01-40.el10 148 kB/s |  20 kB     00:00
+(188/287): perl-I18N-Langinfo-0.24-515.el10 189 kB/s |  24 kB     00:00
+(189/287): perl-HTTP-Tiny-0.088-512.el10.no 238 kB/s |  56 kB     00:00
+(190/287): perl-IO-1.55-515.el10_2.x86_64.r 262 kB/s |  76 kB     00:00
+(191/287): perl-IO-Compress-2.212-512.el10_ 1.5 MB/s | 291 kB     00:00
+(192/287): perl-IO-HTML-1.004-14.el10.noarc 219 kB/s |  27 kB     00:00
+(193/287): perl-IO-Socket-IP-0.42-512.el10. 314 kB/s |  42 kB     00:00
+(194/287): perl-IO-Socket-SSL-2.085-3.el10. 1.1 MB/s | 229 kB     00:00
+(195/287): perl-LWP-MediaTypes-6.04-19.el10 271 kB/s |  33 kB     00:00
+(196/287): perl-IPC-Open3-1.22-515.el10_2.n  89 kB/s |  20 kB     00:00
+(197/287): perl-Mozilla-CA-20231213-5.el10. 113 kB/s |  14 kB     00:00
+(198/287): perl-MIME-Base64-3.16-511.el10.x 132 kB/s |  30 kB     00:00
+(199/287): perl-Module-Load-0.36-511.el10.n  76 kB/s |  17 kB     00:00
+(200/287): perl-NDBM_File-1.17-515.el10_2.x 179 kB/s |  21 kB     00:00
+(201/287): perl-NTLM-1.09-41.el10.noarch.rp 174 kB/s |  22 kB     00:00
+(202/287): perl-Net-HTTP-6.23-6.el10.noarch 297 kB/s |  39 kB     00:00
+(203/287): perl-Net-SSLeay-1.94-8.el10.x86_ 2.0 MB/s | 382 kB     00:00
+(204/287): perl-POSIX-2.20-515.el10_2.x86_6 500 kB/s |  95 kB     00:00
+(205/287): perl-PathTools-3.91-512.el10.x86 496 kB/s |  88 kB     00:00
+(206/287): perl-Pod-Escapes-1.07-511.el10.n 164 kB/s |  20 kB     00:00
+(207/287): perl-Pod-Perldoc-3.28.01-512.el1 503 kB/s |  87 kB     00:00
+(208/287): perl-Pod-Usage-2.03-511.el10.noa 312 kB/s |  40 kB     00:00
+(209/287): perl-Pod-Simple-3.45-511.el10.no 1.2 MB/s | 221 kB     00:00
+(210/287): perl-SelectSaver-1.02-515.el10_2  89 kB/s |  10 kB     00:00
+(211/287): perl-Scalar-List-Utils-1.63-511. 424 kB/s |  73 kB     00:00
+(212/287): perl-Socket-2.038-511.el10.x86_6 430 kB/s |  55 kB     00:00
+(213/287): perl-Storable-3.32-511.el10.x86_ 549 kB/s |  98 kB     00:00
+(214/287): perl-Symbol-1.09-515.el10_2.noar  55 kB/s |  13 kB     00:00
+(215/287): perl-Term-ANSIColor-5.01-512.el1 204 kB/s |  48 kB     00:00
+(216/287): perl-Term-Cap-1.18-511.el10.noar 175 kB/s |  22 kB     00:00
+(217/287): perl-TermReadKey-2.38-24.el10.x8 284 kB/s |  36 kB     00:00
+(218/287): perl-Text-ParseWords-3.31-511.el 128 kB/s |  16 kB     00:00
+(219/287): perl-Thread-Queue-3.14-511.el10. 179 kB/s |  21 kB     00:00
+(220/287): perl-Text-Tabs+Wrap-2024.001-511  97 kB/s |  22 kB     00:00
+(221/287): perl-Time-Local-1.350-511.el10.n 154 kB/s |  34 kB     00:00
+(222/287): perl-TimeDate-2.33-16.el10.noarc 498 kB/s |  60 kB     00:00
+(223/287): perl-Try-Tiny-0.31-12.el10.noarc 324 kB/s |  42 kB     00:00
+(224/287): perl-WWW-RobotRules-6.02-41.el10 150 kB/s |  20 kB     00:00
+(225/287): perl-URI-5.27-3.el10.noarch.rpm  738 kB/s | 136 kB     00:00
+(226/287): perl-base-2.27-515.el10_2.noarch 120 kB/s |  15 kB     00:00
+(227/287): perl-XML-Parser-2.47-6.1.el10_1. 774 kB/s | 228 kB     00:00
+(228/287): perl-generators-1.16-7.el10.noar 122 kB/s |  16 kB     00:00
+(229/287): perl-constant-1.33-512.el10.noar 102 kB/s |  23 kB     00:00
+(230/287): perl-if-0.61.000-515.el10_2.noar 104 kB/s |  12 kB     00:00
+(231/287): perl-lib-0.65-515.el10_2.x86_64. 106 kB/s |  13 kB     00:00
+(232/287): perl-interpreter-5.40.2-515.el10 253 kB/s |  71 kB     00:00
+(233/287): perl-libnet-3.15-512.el10.noarch 426 kB/s | 130 kB     00:00
+(234/287): perl-libs-5.40.2-515.el10_2.x86_ 6.8 MB/s | 2.2 MB     00:00
+(235/287): perl-libwww-perl-6.76-3.el10.noa 961 kB/s | 210 kB     00:00
+(236/287): perl-locale-1.12-515.el10_2.noar  84 kB/s |  12 kB     00:00
+(237/287): perl-macros-5.40.2-515.el10_2.no  92 kB/s |  11 kB     00:00
+(238/287): perl-overload-1.37-515.el10_2.no 379 kB/s |  44 kB     00:00
+(239/287): perl-overloading-0.02-515.el10_2  91 kB/s |  11 kB     00:00
+(240/287): perl-mro-1.29-515.el10_2.x86_64. 122 kB/s |  28 kB     00:00
+(241/287): perl-parent-0.241-512.el10.noarc 125 kB/s |  15 kB     00:00
+(242/287): perl-subs-1.04-515.el10_2.noarch  80 kB/s |  10 kB     00:00
+(243/287): perl-podlators-5.01-511.el10.noa 709 kB/s | 126 kB     00:00
+(244/287): perl-srpm-macros-1-57.el10.noarc  37 kB/s | 8.5 kB     00:00
+(245/287): perl-vars-1.05-515.el10_2.noarch  90 kB/s |  11 kB     00:00
+(246/287): perl-threads-2.40-511.el10.x86_6 142 kB/s |  58 kB     00:00
+(247/287): perl-threads-shared-1.69-511.el1 115 kB/s |  45 kB     00:00
+(248/287): pesign-116-6.el10.x86_64.rpm     972 kB/s | 195 kB     00:00
+(249/287): pixman-0.43.4-2.el10.x86_64.rpm  1.3 MB/s | 285 kB     00:00
+(250/287): perl-version-0.99.32-4.el10.x86_ 112 kB/s |  63 kB     00:00
+(251/287): poppler-24.02.0-7.el10_2.2.x86_6 5.2 MB/s | 1.2 MB     00:00
+(252/287): poppler-glib-24.02.0-7.el10_2.2. 996 kB/s | 191 kB     00:00
+(253/287): pyproject-srpm-macros-1.18.5-1.e 107 kB/s |  13 kB     00:00
+(254/287): poppler-data-0.4.11-9.el10.noarc 5.2 MB/s | 2.0 MB     00:00
+(255/287): python-srpm-macros-3.12-11.el10. 178 kB/s |  23 kB     00:00
+(256/287): qt6-srpm-macros-6.10.1-1.el10.no  71 kB/s | 9.3 kB     00:00
+(257/287): redhat-rpm-config-295-1.el10.roc 283 kB/s |  77 kB     00:00
+(258/287): rsvg-pixbuf-loader-2.57.1-9.el10  67 kB/s |  15 kB     00:00
+(259/287): rpm-build-4.19.1.1-23.el10.x86_6 278 kB/s |  76 kB     00:00
+(260/287): rust-toolset-srpm-macros-1.92.0-  43 kB/s | 9.7 kB     00:00
+(261/287): sgml-common-0.6.3-65.el10.noarch 268 kB/s |  63 kB     00:00
+(262/287): source-highlight-3.1.9-25.el10.x 2.4 MB/s | 782 kB     00:00
+(263/287): systemtap-5.4-3.el10.x86_64.rpm   41 kB/s | 9.7 kB     00:00
+(264/287): systemtap-runtime-5.4-3.el10.x86 1.2 MB/s | 468 kB     00:00
+(265/287): systemtap-client-5.4-3.el10.x86_ 7.2 MB/s | 4.2 MB     00:00
+(266/287): systemtap-devel-5.4-3.el10.x86_6 5.2 MB/s | 2.5 MB     00:00
+(267/287): tbb-2021.11.0-7.el10.x86_64.rpm  893 kB/s | 165 kB     00:00
+(268/287): urw-base35-bookman-fonts-2020091 4.0 MB/s | 846 kB     00:00
+(269/287): urw-base35-c059-fonts-20200910-2 3.7 MB/s | 874 kB     00:00
+(270/287): urw-base35-fonts-20200910-21.el1  74 kB/s | 9.6 kB     00:00
+(271/287): urw-base35-d050000l-fonts-202009 389 kB/s |  75 kB     00:00
+(272/287): urw-base35-fonts-common-20200910  90 kB/s |  20 kB     00:00
+(273/287): urw-base35-gothic-fonts-20200910 3.1 MB/s | 642 kB     00:00
+(274/287): urw-base35-nimbus-mono-ps-fonts- 3.7 MB/s | 794 kB     00:00
+(275/287): urw-base35-nimbus-roman-fonts-20 3.8 MB/s | 855 kB     00:00
+(276/287): urw-base35-standard-symbols-ps-f 292 kB/s |  41 kB     00:00
+(277/287): urw-base35-nimbus-sans-fonts-202 2.5 MB/s | 1.3 MB     00:00
+(278/287): urw-base35-p052-fonts-20200910-2 1.9 MB/s | 973 kB     00:00
+(279/287): urw-base35-z003-fonts-20200910-2 971 kB/s | 275 kB     00:00
+(280/287): valgrind-devel-3.26.0-5.el10.x86 396 kB/s |  50 kB     00:00
+(281/287): valgrind-docs-3.26.0-5.el10.x86_ 3.7 MB/s | 1.5 MB     00:00
+(282/287): valgrind-3.26.0-5.el10.x86_64.rp 7.4 MB/s | 3.9 MB     00:00
+(283/287): valgrind-gdb-3.26.0-5.el10.x86_6 330 kB/s | 132 kB     00:00
+(284/287): xml-common-0.6.3-65.el10.noarch. 259 kB/s |  31 kB     00:00
+(285/287): valgrind-scripts-3.26.0-5.el10.x 329 kB/s |  68 kB     00:00
+(286/287): xz-devel-5.6.2-4.el10_2.1.x86_64 271 kB/s |  61 kB     00:00
+(287/287): zlib-ng-compat-devel-2.2.3-3.el1 161 kB/s |  36 kB     00:00
+----------------------------------------------------------------------------
+Total                                       6.7 MB/s | 206 MB     00:30
+Ejecutando verificación de operación
+Verificación de operación exitosa.
+Ejecutando prueba de operaciones
+Prueba de operación exitosa.
+Ejecutando operación
+  Preparando          :                                                 1/1
+  Instalando          : nspr-4.39.0-5.el10_2.x86_64                   1/287
+  Instalando          : libpng-2:1.6.40-11.el10_2.1.x86_64            2/287
+  Instalando          : nss-util-3.124.0-5.el10_2.x86_64              3/287
+  Instalando          : binutils-gold-2.41-63.el10.x86_64             4/287
+  Ejecutando scriptlet: binutils-gold-2.41-63.el10.x86_64             4/287
+  Instalando          : binutils-2.41-63.el10.x86_64                  5/287
+  Ejecutando scriptlet: binutils-2.41-63.el10.x86_64                  5/287
+  Instalando          : libjpeg-turbo-3.0.2-4.el10.x86_64             6/287
+  Instalando          : boost-system-1.83.0-7.el10.x86_64             7/287
+  Instalando          : libgpg-error-1.50-2.el10.x86_64               8/287
+  Instalando          : fonts-filesystem-1:2.0.5-18.el10.noarch       9/287
+  Instalando          : urw-base35-fonts-common-20200910-21.el10.    10/287
+  Instalando          : libassuan-2.5.6-6.el10.x86_64                11/287
+  Ejecutando scriptlet: xml-common-0.6.3-65.el10.noarch              12/287
+  Instalando          : xml-common-0.6.3-65.el10.noarch              12/287
+  Instalando          : m4-1.4.19-11.el10.x86_64                     13/287
+  Instalando          : libwebp-1.3.2-10.el10.x86_64                 14/287
+  Instalando          : libmpc-1.3.1-7.el10.x86_64                   15/287
+  Instalando          : unzip-6.0-69.el10.x86_64                     16/287
+  Instalando          : make-1:4.4.1-9.el10.x86_64                   17/287
+  Instalando          : avahi-libs-0.9~rc2-2.el10_0.x86_64           18/287
+  Instalando          : zip-3.0-45.el10.x86_64                       19/287
+  Instalando          : perl-Digest-1.20-511.el10.noarch             20/287
+  Instalando          : perl-Digest-MD5-2.59-6.el10.x86_64           21/287
+  Instalando          : perl-B-1.89-515.el10_2.x86_64                22/287
+  Instalando          : perl-FileHandle-2.05-515.el10_2.noarch       23/287
+  Instalando          : perl-Data-Dumper-2.189-512.el10.x86_64       24/287
+  Instalando          : perl-libnet-3.15-512.el10.noarch             25/287
+  Instalando          : perl-URI-5.27-3.el10.noarch                  26/287
+  Instalando          : perl-AutoLoader-5.74-515.el10_2.noarch       27/287
+  Instalando          : perl-Text-Tabs+Wrap-2024.001-511.el10.noa    28/287
+  Instalando          : perl-Mozilla-CA-20231213-5.el10.noarch       29/287
+  Instalando          : perl-if-0.61.000-515.el10_2.noarch           30/287
+  Instalando          : perl-locale-1.12-515.el10_2.noarch           31/287
+  Instalando          : perl-IO-Socket-IP-0.42-512.el10.noarch       32/287
+  Instalando          : perl-Time-Local-2:1.350-511.el10.noarch      33/287
+  Instalando          : perl-File-Path-2.18-512.el10.noarch          34/287
+  Instalando          : perl-Pod-Escapes-1:1.07-511.el10.noarch      35/287
+  Instalando          : perl-IO-Socket-SSL-2.085-3.el10.noarch       36/287
+  Instalando          : perl-Net-SSLeay-1.94-8.el10.x86_64           37/287
+  Instalando          : perl-Class-Struct-0.68-515.el10_2.noarch     38/287
+  Instalando          : perl-Term-ANSIColor-5.01-512.el10.noarch     39/287
+  Instalando          : perl-POSIX-2.20-515.el10_2.x86_64            40/287
+  Instalando          : perl-IPC-Open3-1.22-515.el10_2.noarch        41/287
+  Instalando          : perl-File-Temp-1:0.231.100-512.el10.noarc    42/287
+  Instalando          : perl-Term-Cap-1.18-511.el10.noarch           43/287
+  Instalando          : perl-Pod-Simple-1:3.45-511.el10.noarch       44/287
+  Instalando          : perl-HTTP-Tiny-0.088-512.el10.noarch         45/287
+  Instalando          : perl-Socket-4:2.038-511.el10.x86_64          46/287
+  Instalando          : perl-SelectSaver-1.02-515.el10_2.noarch      47/287
+  Instalando          : perl-Symbol-1.09-515.el10_2.noarch           48/287
+  Instalando          : perl-File-stat-1.14-515.el10_2.noarch        49/287
+  Instalando          : perl-podlators-1:5.01-511.el10.noarch        50/287
+  Instalando          : perl-Pod-Perldoc-3.28.01-512.el10.noarch     51/287
+  Instalando          : perl-Fcntl-1.18-515.el10_2.x86_64            52/287
+  Instalando          : perl-Text-ParseWords-3.31-511.el10.noarch    53/287
+  Instalando          : perl-base-2.27-515.el10_2.noarch             54/287
+  Instalando          : perl-mro-1.29-515.el10_2.x86_64              55/287
+  Instalando          : perl-IO-1.55-515.el10_2.x86_64               56/287
+  Instalando          : perl-overloading-0.02-515.el10_2.noarch      57/287
+  Instalando          : perl-Pod-Usage-4:2.03-511.el10.noarch        58/287
+  Instalando          : perl-Errno-1.38-515.el10_2.x86_64            59/287
+  Instalando          : perl-File-Basename-2.86-515.el10_2.noarch    60/287
+  Instalando          : perl-Getopt-Std-1.14-515.el10_2.noarch       61/287
+  Instalando          : perl-MIME-Base64-3.16-511.el10.x86_64        62/287
+  Instalando          : perl-Scalar-List-Utils-5:1.63-511.el10.x8    63/287
+  Instalando          : perl-constant-1.33-512.el10.noarch           64/287
+  Instalando          : perl-Storable-1:3.32-511.el10.x86_64         65/287
+  Instalando          : perl-overload-1.37-515.el10_2.noarch         66/287
+  Instalando          : perl-parent-1:0.241-512.el10.noarch          67/287
+  Instalando          : perl-vars-1.05-515.el10_2.noarch             68/287
+  Instalando          : perl-Getopt-Long-1:2.58-3.el10.noarch        69/287
+  Instalando          : perl-Carp-1.54-511.el10.noarch               70/287
+  Instalando          : perl-Exporter-5.78-511.el10.noarch           71/287
+  Instalando          : perl-NDBM_File-1.17-515.el10_2.x86_64        72/287
+  Instalando          : perl-PathTools-3.91-512.el10.x86_64          73/287
+  Instalando          : perl-DynaLoader-1.56-515.el10_2.x86_64       74/287
+  Instalando          : perl-Encode-4:3.21-511.el10.x86_64           75/287
+  Instalando          : perl-libs-4:5.40.2-515.el10_2.x86_64         76/287
+  Instalando          : perl-interpreter-4:5.40.2-515.el10_2.x86_    77/287
+  Instalando          : perl-Compress-Raw-Zlib-2.212-513.el10_1.x    78/287
+  Instalando          : perl-File-Copy-2.41-515.el10_2.noarch        79/287
+  Instalando          : perl-File-Find-1.44-515.el10_2.noarch        80/287
+  Instalando          : perl-threads-1:2.40-511.el10.x86_64          81/287
+  Instalando          : openjpeg2-2.5.2-5.el10.x86_64                82/287
+  Instalando          : lcms2-2.16-6.el10.x86_64                     83/287
+  Instalando          : git-core-2.52.0-1.el10.x86_64                84/287
+  Instalando          : dwz-0.16-1.el10.x86_64                       85/287
+  Instalando          : adobe-mappings-cmap-20230622-5.el10.noarc    86/287
+  Instalando          : tar-2:1.35-13.el10_2.x86_64                  87/287
+  Instalando          : elfutils-0.194-2.el10.rocky.0.1.x86_64       88/287
+  Instalando          : efivar-libs-39-3.el10.x86_64                 89/287
+  Instalando          : mokutil-2:0.7.2-4.el10.x86_64                90/287
+  Instalando          : adobe-mappings-cmap-deprecated-20230622-5    91/287
+  Instalando          : git-core-doc-2.52.0-1.el10.noarch            92/287
+  Instalando          : perl-threads-shared-1.69-511.el10.x86_64     93/287
+  Instalando          : perl-Thread-Queue-3.14-511.el10.noarch       94/287
+  Instalando          : perl-Digest-SHA-1:6.04-512.el10.x86_64       95/287
+  Instalando          : perl-Digest-HMAC-1.04-12.el10.noarch         96/287
+  Instalando          : perl-NTLM-1.09-41.el10.noarch                97/287
+  Instalando          : perl-macros-4:5.40.2-515.el10_2.noarch       98/287
+  Instalando          : perl-Clone-0.46-10.el10.x86_64               99/287
+  Instalando          : perl-Compress-Raw-Bzip2-2.212-512.el10.x8   100/287
+  Instalando          : perl-IO-Compress-2.212-512.el10_2.1.noarc   101/287
+  Instalando          : perl-Net-HTTP-6.23-6.el10.noarch            102/287
+  Instalando          : perl-Error-1:0.17029-18.el10.noarch         103/287
+  Instalando          : perl-Fedora-VSP-0.001-36.el10.noarch        104/287
+  Instalando          : perl-File-Compare-1.100.800-515.el10_2.no   105/287
+  Instalando          : perl-HTML-Tagset-3.20-59.el10.noarch        106/287
+  Instalando          : perl-I18N-Langinfo-0.24-515.el10_2.x86_64   107/287
+  Instalando          : perl-Encode-Locale-1.05-31.el10.noarch      108/287
+  Instalando          : perl-IO-HTML-1.004-14.el10.noarch           109/287
+  Instalando          : perl-Module-Load-1:0.36-511.el10.noarch     110/287
+  Instalando          : perl-TermReadKey-2.38-24.el10.x86_64        111/287
+  Instalando          : perl-TimeDate-1:2.33-16.el10.noarch         112/287
+  Instalando          : perl-HTTP-Date-6.06-6.el10.noarch           113/287
+  Instalando          : perl-File-Listing-6.16-5.el10.noarch        114/287
+  Instalando          : perl-Try-Tiny-0.31-12.el10.noarch           115/287
+  Instalando          : perl-WWW-RobotRules-6.02-41.el10.noarch     116/287
+  Instalando          : perl-lib-0.65-515.el10_2.x86_64             117/287
+  Instalando          : perl-Git-2.52.0-1.el10.noarch               118/287
+  Instalando          : git-2.52.0-1.el10.x86_64                    119/287
+  Instalando          : perl-subs-1.04-515.el10_2.noarch            120/287
+  Instalando          : perl-Data-Dump-1.25-13.el10.noarch          121/287
+  Instalando          : perl-version-8:0.99.32-4.el10.x86_64        122/287
+  Instalando          : cpp-14.3.1-4.4.el10.x86_64                  123/287
+  Instalando          : bison-3.8.2-9.el10.x86_64                   124/287
+  Instalando          : flex-2.6.4-19.el10.x86_64                   125/287
+  Instalando          : urw-base35-bookman-fonts-20200910-21.el10   126/287
+  Ejecutando scriptlet: urw-base35-bookman-fonts-20200910-21.el10   126/287
+  Instalando          : urw-base35-c059-fonts-20200910-21.el10.no   127/287
+  Ejecutando scriptlet: urw-base35-c059-fonts-20200910-21.el10.no   127/287
+  Instalando          : urw-base35-d050000l-fonts-20200910-21.el1   128/287
+  Ejecutando scriptlet: urw-base35-d050000l-fonts-20200910-21.el1   128/287
+  Instalando          : urw-base35-gothic-fonts-20200910-21.el10.   129/287
+  Ejecutando scriptlet: urw-base35-gothic-fonts-20200910-21.el10.   129/287
+  Instalando          : urw-base35-nimbus-mono-ps-fonts-20200910-   130/287
+  Ejecutando scriptlet: urw-base35-nimbus-mono-ps-fonts-20200910-   130/287
+  Instalando          : urw-base35-nimbus-roman-fonts-20200910-21   131/287
+  Ejecutando scriptlet: urw-base35-nimbus-roman-fonts-20200910-21   131/287
+  Instalando          : urw-base35-nimbus-sans-fonts-20200910-21.   132/287
+  Ejecutando scriptlet: urw-base35-nimbus-sans-fonts-20200910-21.   132/287
+  Instalando          : urw-base35-p052-fonts-20200910-21.el10.no   133/287
+  Ejecutando scriptlet: urw-base35-p052-fonts-20200910-21.el10.no   133/287
+  Instalando          : urw-base35-standard-symbols-ps-fonts-2020   134/287
+  Ejecutando scriptlet: urw-base35-standard-symbols-ps-fonts-2020   134/287
+  Instalando          : urw-base35-z003-fonts-20200910-21.el10.no   135/287
+  Ejecutando scriptlet: urw-base35-z003-fonts-20200910-21.el10.no   135/287
+  Instalando          : urw-base35-fonts-20200910-21.el10.noarch    136/287
+  Instalando          : redhat-text-vf-fonts-4.1.0-1.el10.noarch    137/287
+  Instalando          : libgcrypt-1.11.0-7.el10_2.x86_64            138/287
+  Instalando          : libksba-1.6.7-2.el10.x86_64                 139/287
+  Instalando          : boost-thread-1.83.0-7.el10.x86_64           140/287
+  Instalando          : nss-softokn-freebl-3.124.0-5.el10_2.x86_6   141/287
+  Instalando          : nss-softokn-3.124.0-5.el10_2.x86_64         142/287
+  Instalando          : nss-3.124.0-5.el10_2.x86_64                 143/287
+  Ejecutando scriptlet: nss-3.124.0-5.el10_2.x86_64                 143/287
+  Instalando          : nss-sysinit-3.124.0-5.el10_2.x86_64         144/287
+  Instalando          : nss-tools-3.124.0-5.el10_2.x86_64           145/287
+  Instalando          : valgrind-docs-1:3.26.0-5.el10.x86_64        146/287
+  Instalando          : tbb-2021.11.0-7.el10.x86_64                 147/287
+  Instalando          : sgml-common-0.6.3-65.el10.noarch            148/287
+  Instalando          : docbook-dtds-1.0-92.el10.noarch             149/287
+  Ejecutando scriptlet: docbook-dtds-1.0-92.el10.noarch             149/287
+  Instalando          : docbook-style-xsl-1.79.2-30.el10.noarch     150/287
+  Ejecutando scriptlet: docbook-style-xsl-1.79.2-30.el10.noarch     150/287
+  Instalando          : rust-toolset-srpm-macros-1.92.0-2.el10_2.   151/287
+  Instalando          : qt6-srpm-macros-6.10.1-1.el10.noarch        152/287
+  Instalando          : poppler-data-0.4.11-9.el10.noarch           153/287
+  Instalando          : pixman-0.43.4-2.el10.x86_64                 154/287
+  Instalando          : perl-srpm-macros-1-57.el10.noarch           155/287
+  Instalando          : package-notes-srpm-macros-0.5-13.el10.noa   156/287
+  Instalando          : openblas-srpm-macros-2-19.el10.noarch       157/287
+  Instalando          : ocaml-srpm-macros-10-4.el10.noarch          158/287
+  Instalando          : lua-srpm-macros-1-15.el10.noarch            159/287
+  Instalando          : libxslt-1.1.39-8.el10_2.1.x86_64            160/287
+  Instalando          : libtool-ltdl-2.4.7-14.el10.x86_64           161/287
+  Instalando          : libstdc++-devel-14.3.1-4.4.el10.x86_64      162/287
+  Instalando          : libpaper-1:2.1.1-7.el10.x86_64              163/287
+  Instalando          : liblerc-4.0.0-8.el10.x86_64                 164/287
+  Instalando          : libipt-2.1-5.el10.x86_64                    165/287
+  Instalando          : libijs-0.35-24.el10.x86_64                  166/287
+  Instalando          : libdatrie-0.2.13-11.el10.x86_64             167/287
+  Instalando          : libthai-0.1.29-10.el10.x86_64               168/287
+  Instalando          : libbabeltrace-1.5.11-9.el10.x86_64          169/287
+  Instalando          : libXau-1.0.11-8.el10.x86_64                 170/287
+  Instalando          : libxcb-1.17.0-3.el10.x86_64                 171/287
+  Instalando          : libX11-common-1.8.10-1.el10.noarch          172/287
+  Instalando          : libX11-1.8.10-1.el10.x86_64                 173/287
+  Instalando          : libXrender-0.9.11-8.el10.x86_64             174/287
+  Instalando          : libXext-1.3.6-3.el10.x86_64                 175/287
+  Instalando          : libXpm-3.5.17-5.el10.x86_64                 176/287
+  Instalando          : kernel-srpm-macros-1.0-27.el10.noarch       177/287
+  Instalando          : kernel-headers-6.12.0-211.65.1.el10_2.x86   178/287
+  Instalando          : jbigkit-libs-2.1-31.el10.x86_64             179/287
+  Instalando          : libtiff-4.6.0-8.el10_2.4.x86_64             180/287
+  Instalando          : jbig2dec-libs-0.20-7.el10.x86_64            181/287
+  Instalando          : javapackages-filesystem-6.4.0-1.el10.noar   182/287
+  Instalando          : gettext-common-devel-0.22.5-6.el10.noarch   183/287
+  Instalando          : fribidi-1.0.14-4.el10.x86_64                184/287
+  Instalando          : efi-srpm-macros-6-7.el10.rocky.0.1.noarch   185/287
+  Instalando          : cmake-filesystem-3.31.8-1.el10.x86_64       186/287
+  Instalando          : boost-atomic-1.83.0-7.el10.x86_64           187/287
+  Instalando          : boost-filesystem-1.83.0-7.el10.x86_64       188/287
+  Instalando          : dyninst-13.0.0-1.el10.x86_64                189/287
+  Ejecutando scriptlet: dyninst-13.0.0-1.el10.x86_64                189/287
+  Ejecutando scriptlet: systemtap-runtime-5.4-3.el10.x86_64         190/287
+Creating group 'stapusr' with GID 156.
+Creating group 'stapsys' with GID 157.
+Creating group 'stapdev' with GID 158.
+Creating group 'stapunpriv' with GID 159.
+Creating user 'stapunpriv' (systemtap unprivileged user) with UID 159 and GID 159.
+
+  Instalando          : systemtap-runtime-5.4-3.el10.x86_64         190/287
+  Ejecutando scriptlet: systemtap-runtime-5.4-3.el10.x86_64         190/287
+  Instalando          : systemtap-client-5.4-3.el10.x86_64          191/287
+  Instalando          : annobin-docs-13.02-2.el10.noarch            192/287
+  Instalando          : adobe-mappings-pdf-20190401-9.el10.noarch   193/287
+  Instalando          : zstd-1.5.5-9.el10.x86_64                    194/287
+  Instalando          : shared-mime-info-2.3-8.el10.x86_64          195/287
+  Ejecutando scriptlet: shared-mime-info-2.3-8.el10.x86_64          195/287
+  Instalando          : gdk-pixbuf2-2.42.12-4.el10_1.5.x86_64       196/287
+  Instalando          : pkgconf-m4-2.1.0-3.el10.noarch              197/287
+  Instalando          : npth-1.6-21.el10.x86_64                     198/287
+  Instalando          : gnupg2-2.4.5-4.el10_1.x86_64                199/287
+  Instalando          : gpgme-1.23.2-6.el10.x86_64                  200/287
+  Instalando          : gpgmepp-1.23.2-6.el10.x86_64                201/287
+  Instalando          : mailcap-2.1.54-8.el10.noarch                202/287
+  Instalando          : perl-LWP-MediaTypes-6.04-19.el10.noarch     203/287
+  Instalando          : perl-HTTP-Message-6.45-5.el10.noarch        204/287
+  Instalando          : perl-HTML-Parser-3.82-3.el10.x86_64         205/287
+  Instalando          : perl-HTTP-Cookies-6.11-5.el10.noarch        206/287
+  Instalando          : perl-HTTP-Negotiate-6.01-40.el10.noarch     207/287
+  Instalando          : perl-libwww-perl-6.76-3.el10.noarch         208/287
+  Instalando          : perl-XML-Parser-2.47-6.1.el10_1.x86_64      209/287
+  Instalando          : libpkgconf-2.1.0-3.el10.x86_64              210/287
+  Instalando          : pkgconf-2.1.0-3.el10.x86_64                 211/287
+  Instalando          : pkgconf-pkg-config-2.1.0-3.el10.x86_64      212/287
+  Instalando          : libzstd-devel-1.5.5-9.el10.x86_64           213/287
+  Instalando          : zlib-ng-compat-devel-2.2.3-3.el10_1.x86_6   214/287
+  Instalando          : elfutils-libelf-devel-0.194-2.el10.rocky.   215/287
+  Instalando          : elfutils-debuginfod-client-devel-0.194-2.   216/287
+  Instalando          : glibc-devel-2.39-142.el10_2.x86_64          217/287
+  Instalando          : libxcrypt-devel-4.4.36-10.el10.x86_64       218/287
+  Instalando          : gcc-14.3.1-4.4.el10.x86_64                  219/287
+  Instalando          : annobin-plugin-gcc-13.02-2.el10.x86_64      220/287
+  Instalando          : gcc-plugin-annobin-14.3.1-4.4.el10.x86_64   221/287
+  Instalando          : openssl-devel-1:3.5.8-2.el10_2.x86_64       222/287
+  Instalando          : kernel-devel-6.12.0-211.65.1.el10_2.x86_6   223/287
+  Ejecutando scriptlet: kernel-devel-6.12.0-211.65.1.el10_2.x86_6   223/287
+  Instalando          : xz-devel-1:5.6.2-4.el10_2.1.x86_64          224/287
+  Instalando          : elfutils-devel-0.194-2.el10.rocky.0.1.x86   225/287
+  Instalando          : systemtap-devel-5.4-3.el10.x86_64           226/287
+  Instalando          : libicu-74.2-5.el10_0.x86_64                 227/287
+  Instalando          : boost-regex-1.83.0-7.el10.x86_64            228/287
+  Instalando          : source-highlight-3.1.9-25.el10.x86_64       229/287
+  Instalando          : gdb-headless-16.3-3.1.el10_2.x86_64         230/287
+  Instalando          : debugedit-5.1-8.el10.x86_64                 231/287
+  Instalando          : gdb-16.3-3.1.el10_2.x86_64                  232/287
+  Instalando          : valgrind-1:3.26.0-5.el10.x86_64             233/287
+  Instalando          : valgrind-gdb-1:3.26.0-5.el10.x86_64         234/287
+  Instalando          : valgrind-scripts-1:3.26.0-5.el10.x86_64     235/287
+  Instalando          : graphite2-1.3.14-17.el10.x86_64             236/287
+  Instalando          : harfbuzz-8.4.0-6.el10.x86_64                237/287
+  Instalando          : freetype-2.13.2-8.el10.x86_64               238/287
+  Instalando          : google-noto-fonts-common-20240401-5.el10.   239/287
+  Instalando          : google-noto-sans-vf-fonts-20240401-5.el10   240/287
+  Instalando          : default-fonts-core-sans-4.1-3.el10.noarch   241/287
+  Instalando          : fontconfig-2.15.0-7.el10.x86_64             242/287
+  Ejecutando scriptlet: fontconfig-2.15.0-7.el10.x86_64             242/287
+  Instalando          : cairo-1.18.2-2.el10_2.1.x86_64              243/287
+  Instalando          : cairo-gobject-1.18.2-2.el10_2.1.x86_64      244/287
+  Instalando          : gd-2.3.3-22.el10.x86_64                     245/287
+  Instalando          : libXft-2.3.8-8.el10.x86_64                  246/287
+  Instalando          : pango-1.54.0-3.el10.x86_64                  247/287
+  Instalando          : librsvg2-2.57.1-9.el10.x86_64               248/287
+  Instalando          : rsvg-pixbuf-loader-2.57.1-9.el10.x86_64     249/287
+  Instalando          : poppler-24.02.0-7.el10_2.2.x86_64           250/287
+  Instalando          : poppler-glib-24.02.0-7.el10_2.2.x86_64      251/287
+  Instalando          : google-droid-sans-fonts-20200215-22.el10.   252/287
+  Instalando          : gettext-0.22.5-6.el10.x86_64                253/287
+  Instalando          : gettext-devel-0.22.5-6.el10.x86_64          254/287
+  Instalando          : emacs-filesystem-1:29.4-13.el10_2.noarch    255/287
+  Instalando          : autoconf-2.71-13.el10.noarch                256/287
+  Instalando          : automake-1.16.5-20.el10.noarch              257/287
+  Instalando          : ed-1.20-5.el10.x86_64                       258/287
+  Instalando          : patch-2.7.6-26.el10.x86_64                  259/287
+  Instalando          : cups-filesystem-1:2.4.10-18.el10_2.noarch   260/287
+  Instalando          : cups-libs-1:2.4.10-18.el10_2.x86_64         261/287
+  Instalando          : libgs-10.02.1-16.el10_2.1.x86_64            262/287
+  Instalando          : graphviz-9.0.0-15.el10.x86_64               263/287
+  Instalando          : bzip2-1.0.8-25.el10.x86_64                  264/287
+  Instalando          : fonts-srpm-macros-1:2.0.5-18.el10.noarch    265/287
+  Instalando          : forge-srpm-macros-0.4.0-6.el10.noarch       266/287
+  Instalando          : go-srpm-macros-3.8.0-1.el10.noarch          267/287
+  Instalando          : python-srpm-macros-3.12-11.el10.noarch      268/287
+  Instalando          : redhat-rpm-config-295-1.el10.rocky.0.2.no   269/287
+  Ejecutando scriptlet: redhat-rpm-config-295-1.el10.rocky.0.2.no   269/287
+  Instalando          : rpm-build-4.19.1.1-23.el10.x86_64           270/287
+  Instalando          : pyproject-srpm-macros-1.18.5-1.el10.noarc   271/287
+  Instalando          : asciidoc-10.2.0-12.el10.noarch              272/287
+  Instalando          : intltool-0.51.0-29.el10.noarch              273/287
+  Instalando          : patchutils-0.4.2-15.el10.x86_64             274/287
+  Instalando          : libtool-2.4.7-14.el10.x86_64                275/287
+  Instalando          : valgrind-devel-1:3.26.0-5.el10.x86_64       276/287
+  Instalando          : systemtap-5.4-3.el10.x86_64                 277/287
+  Ejecutando scriptlet: systemtap-5.4-3.el10.x86_64                 277/287
+  Instalando          : gcc-c++-14.3.1-4.4.el10.x86_64              278/287
+  Instalando          : jna-5.14.0-7.el10.x86_64                    279/287
+  Ejecutando scriptlet: pesign-116-6.el10.x86_64                    280/287
+  Instalando          : pesign-116-6.el10.x86_64                    280/287
+  Ejecutando scriptlet: pesign-116-6.el10.x86_64                    280/287
+  Instalando          : perl-generators-1.16-7.el10.noarch          281/287
+  Instalando          : ltrace-0.7.91-53.el10.x86_64                282/287
+  Instalando          : diffstat-1.66-3.el10.x86_64                 283/287
+  Instalando          : byacc-2.0.20230521-7.el10.x86_64            284/287
+  Instalando          : systemd-rpm-macros-257-23.el10_2.2.rocky.   285/287
+  Instalando          : strace-6.12-3.el10.x86_64                   286/287
+  Instalando          : rpm-sign-4.19.1.1-23.el10.x86_64            287/287
+  Ejecutando scriptlet: urw-base35-bookman-fonts-20200910-21.el10   287/287
+  Ejecutando scriptlet: urw-base35-c059-fonts-20200910-21.el10.no   287/287
+  Ejecutando scriptlet: urw-base35-d050000l-fonts-20200910-21.el1   287/287
+  Ejecutando scriptlet: urw-base35-gothic-fonts-20200910-21.el10.   287/287
+  Ejecutando scriptlet: urw-base35-nimbus-mono-ps-fonts-20200910-   287/287
+  Ejecutando scriptlet: urw-base35-nimbus-roman-fonts-20200910-21   287/287
+  Ejecutando scriptlet: urw-base35-nimbus-sans-fonts-20200910-21.   287/287
+  Ejecutando scriptlet: urw-base35-p052-fonts-20200910-21.el10.no   287/287
+  Ejecutando scriptlet: urw-base35-standard-symbols-ps-fonts-2020   287/287
+  Ejecutando scriptlet: urw-base35-z003-fonts-20200910-21.el10.no   287/287
+  Ejecutando scriptlet: fontconfig-2.15.0-7.el10.x86_64             287/287
+  Ejecutando scriptlet: pesign-116-6.el10.x86_64                    287/287
+  Ejecutando scriptlet: rpm-sign-4.19.1.1-23.el10.x86_64            287/287
+
+Instalado:
+  adobe-mappings-cmap-20230622-5.el10.noarch
+  adobe-mappings-cmap-deprecated-20230622-5.el10.noarch
+  adobe-mappings-pdf-20190401-9.el10.noarch
+  annobin-docs-13.02-2.el10.noarch
+  annobin-plugin-gcc-13.02-2.el10.x86_64
+  asciidoc-10.2.0-12.el10.noarch
+  autoconf-2.71-13.el10.noarch
+  automake-1.16.5-20.el10.noarch
+  avahi-libs-0.9~rc2-2.el10_0.x86_64
+  binutils-2.41-63.el10.x86_64
+  binutils-gold-2.41-63.el10.x86_64
+  bison-3.8.2-9.el10.x86_64
+  boost-atomic-1.83.0-7.el10.x86_64
+  boost-filesystem-1.83.0-7.el10.x86_64
+  boost-regex-1.83.0-7.el10.x86_64
+  boost-system-1.83.0-7.el10.x86_64
+  boost-thread-1.83.0-7.el10.x86_64
+  byacc-2.0.20230521-7.el10.x86_64
+  bzip2-1.0.8-25.el10.x86_64
+  cairo-1.18.2-2.el10_2.1.x86_64
+  cairo-gobject-1.18.2-2.el10_2.1.x86_64
+  cmake-filesystem-3.31.8-1.el10.x86_64
+  cpp-14.3.1-4.4.el10.x86_64
+  cups-filesystem-1:2.4.10-18.el10_2.noarch
+  cups-libs-1:2.4.10-18.el10_2.x86_64
+  debugedit-5.1-8.el10.x86_64
+  default-fonts-core-sans-4.1-3.el10.noarch
+  diffstat-1.66-3.el10.x86_64
+  docbook-dtds-1.0-92.el10.noarch
+  docbook-style-xsl-1.79.2-30.el10.noarch
+  dwz-0.16-1.el10.x86_64
+  dyninst-13.0.0-1.el10.x86_64
+  ed-1.20-5.el10.x86_64
+  efi-srpm-macros-6-7.el10.rocky.0.1.noarch
+  efivar-libs-39-3.el10.x86_64
+  elfutils-0.194-2.el10.rocky.0.1.x86_64
+  elfutils-debuginfod-client-devel-0.194-2.el10.rocky.0.1.x86_64
+  elfutils-devel-0.194-2.el10.rocky.0.1.x86_64
+  elfutils-libelf-devel-0.194-2.el10.rocky.0.1.x86_64
+  emacs-filesystem-1:29.4-13.el10_2.noarch
+  flex-2.6.4-19.el10.x86_64
+  fontconfig-2.15.0-7.el10.x86_64
+  fonts-filesystem-1:2.0.5-18.el10.noarch
+  fonts-srpm-macros-1:2.0.5-18.el10.noarch
+  forge-srpm-macros-0.4.0-6.el10.noarch
+  freetype-2.13.2-8.el10.x86_64
+  fribidi-1.0.14-4.el10.x86_64
+  gcc-14.3.1-4.4.el10.x86_64
+  gcc-c++-14.3.1-4.4.el10.x86_64
+  gcc-plugin-annobin-14.3.1-4.4.el10.x86_64
+  gd-2.3.3-22.el10.x86_64
+  gdb-16.3-3.1.el10_2.x86_64
+  gdb-headless-16.3-3.1.el10_2.x86_64
+  gdk-pixbuf2-2.42.12-4.el10_1.5.x86_64
+  gettext-0.22.5-6.el10.x86_64
+  gettext-common-devel-0.22.5-6.el10.noarch
+  gettext-devel-0.22.5-6.el10.x86_64
+  git-2.52.0-1.el10.x86_64
+  git-core-2.52.0-1.el10.x86_64
+  git-core-doc-2.52.0-1.el10.noarch
+  glibc-devel-2.39-142.el10_2.x86_64
+  gnupg2-2.4.5-4.el10_1.x86_64
+  go-srpm-macros-3.8.0-1.el10.noarch
+  google-droid-sans-fonts-20200215-22.el10.noarch
+  google-noto-fonts-common-20240401-5.el10.noarch
+  google-noto-sans-vf-fonts-20240401-5.el10.noarch
+  gpgme-1.23.2-6.el10.x86_64
+  gpgmepp-1.23.2-6.el10.x86_64
+  graphite2-1.3.14-17.el10.x86_64
+  graphviz-9.0.0-15.el10.x86_64
+  harfbuzz-8.4.0-6.el10.x86_64
+  intltool-0.51.0-29.el10.noarch
+  javapackages-filesystem-6.4.0-1.el10.noarch
+  jbig2dec-libs-0.20-7.el10.x86_64
+  jbigkit-libs-2.1-31.el10.x86_64
+  jna-5.14.0-7.el10.x86_64
+  kernel-devel-6.12.0-211.65.1.el10_2.x86_64
+  kernel-headers-6.12.0-211.65.1.el10_2.x86_64
+  kernel-srpm-macros-1.0-27.el10.noarch
+  lcms2-2.16-6.el10.x86_64
+  libX11-1.8.10-1.el10.x86_64
+  libX11-common-1.8.10-1.el10.noarch
+  libXau-1.0.11-8.el10.x86_64
+  libXext-1.3.6-3.el10.x86_64
+  libXft-2.3.8-8.el10.x86_64
+  libXpm-3.5.17-5.el10.x86_64
+  libXrender-0.9.11-8.el10.x86_64
+  libassuan-2.5.6-6.el10.x86_64
+  libbabeltrace-1.5.11-9.el10.x86_64
+  libdatrie-0.2.13-11.el10.x86_64
+  libgcrypt-1.11.0-7.el10_2.x86_64
+  libgpg-error-1.50-2.el10.x86_64
+  libgs-10.02.1-16.el10_2.1.x86_64
+  libicu-74.2-5.el10_0.x86_64
+  libijs-0.35-24.el10.x86_64
+  libipt-2.1-5.el10.x86_64
+  libjpeg-turbo-3.0.2-4.el10.x86_64
+  libksba-1.6.7-2.el10.x86_64
+  liblerc-4.0.0-8.el10.x86_64
+  libmpc-1.3.1-7.el10.x86_64
+  libpaper-1:2.1.1-7.el10.x86_64
+  libpkgconf-2.1.0-3.el10.x86_64
+  libpng-2:1.6.40-11.el10_2.1.x86_64
+  librsvg2-2.57.1-9.el10.x86_64
+  libstdc++-devel-14.3.1-4.4.el10.x86_64
+  libthai-0.1.29-10.el10.x86_64
+  libtiff-4.6.0-8.el10_2.4.x86_64
+  libtool-2.4.7-14.el10.x86_64
+  libtool-ltdl-2.4.7-14.el10.x86_64
+  libwebp-1.3.2-10.el10.x86_64
+  libxcb-1.17.0-3.el10.x86_64
+  libxcrypt-devel-4.4.36-10.el10.x86_64
+  libxslt-1.1.39-8.el10_2.1.x86_64
+  libzstd-devel-1.5.5-9.el10.x86_64
+  ltrace-0.7.91-53.el10.x86_64
+  lua-srpm-macros-1-15.el10.noarch
+  m4-1.4.19-11.el10.x86_64
+  mailcap-2.1.54-8.el10.noarch
+  make-1:4.4.1-9.el10.x86_64
+  mokutil-2:0.7.2-4.el10.x86_64
+  npth-1.6-21.el10.x86_64
+  nspr-4.39.0-5.el10_2.x86_64
+  nss-3.124.0-5.el10_2.x86_64
+  nss-softokn-3.124.0-5.el10_2.x86_64
+  nss-softokn-freebl-3.124.0-5.el10_2.x86_64
+  nss-sysinit-3.124.0-5.el10_2.x86_64
+  nss-tools-3.124.0-5.el10_2.x86_64
+  nss-util-3.124.0-5.el10_2.x86_64
+  ocaml-srpm-macros-10-4.el10.noarch
+  openblas-srpm-macros-2-19.el10.noarch
+  openjpeg2-2.5.2-5.el10.x86_64
+  openssl-devel-1:3.5.8-2.el10_2.x86_64
+  package-notes-srpm-macros-0.5-13.el10.noarch
+  pango-1.54.0-3.el10.x86_64
+  patch-2.7.6-26.el10.x86_64
+  patchutils-0.4.2-15.el10.x86_64
+  perl-AutoLoader-5.74-515.el10_2.noarch
+  perl-B-1.89-515.el10_2.x86_64
+  perl-Carp-1.54-511.el10.noarch
+  perl-Class-Struct-0.68-515.el10_2.noarch
+  perl-Clone-0.46-10.el10.x86_64
+  perl-Compress-Raw-Bzip2-2.212-512.el10.x86_64
+  perl-Compress-Raw-Zlib-2.212-513.el10_1.x86_64
+  perl-Data-Dump-1.25-13.el10.noarch
+  perl-Data-Dumper-2.189-512.el10.x86_64
+  perl-Digest-1.20-511.el10.noarch
+  perl-Digest-HMAC-1.04-12.el10.noarch
+  perl-Digest-MD5-2.59-6.el10.x86_64
+  perl-Digest-SHA-1:6.04-512.el10.x86_64
+  perl-DynaLoader-1.56-515.el10_2.x86_64
+  perl-Encode-4:3.21-511.el10.x86_64
+  perl-Encode-Locale-1.05-31.el10.noarch
+  perl-Errno-1.38-515.el10_2.x86_64
+  perl-Error-1:0.17029-18.el10.noarch
+  perl-Exporter-5.78-511.el10.noarch
+  perl-Fcntl-1.18-515.el10_2.x86_64
+  perl-Fedora-VSP-0.001-36.el10.noarch
+  perl-File-Basename-2.86-515.el10_2.noarch
+  perl-File-Compare-1.100.800-515.el10_2.noarch
+  perl-File-Copy-2.41-515.el10_2.noarch
+  perl-File-Find-1.44-515.el10_2.noarch
+  perl-File-Listing-6.16-5.el10.noarch
+  perl-File-Path-2.18-512.el10.noarch
+  perl-File-Temp-1:0.231.100-512.el10.noarch
+  perl-File-stat-1.14-515.el10_2.noarch
+  perl-FileHandle-2.05-515.el10_2.noarch
+  perl-Getopt-Long-1:2.58-3.el10.noarch
+  perl-Getopt-Std-1.14-515.el10_2.noarch
+  perl-Git-2.52.0-1.el10.noarch
+  perl-HTML-Parser-3.82-3.el10.x86_64
+  perl-HTML-Tagset-3.20-59.el10.noarch
+  perl-HTTP-Cookies-6.11-5.el10.noarch
+  perl-HTTP-Date-6.06-6.el10.noarch
+  perl-HTTP-Message-6.45-5.el10.noarch
+  perl-HTTP-Negotiate-6.01-40.el10.noarch
+  perl-HTTP-Tiny-0.088-512.el10.noarch
+  perl-I18N-Langinfo-0.24-515.el10_2.x86_64
+  perl-IO-1.55-515.el10_2.x86_64
+  perl-IO-Compress-2.212-512.el10_2.1.noarch
+  perl-IO-HTML-1.004-14.el10.noarch
+  perl-IO-Socket-IP-0.42-512.el10.noarch
+  perl-IO-Socket-SSL-2.085-3.el10.noarch
+  perl-IPC-Open3-1.22-515.el10_2.noarch
+  perl-LWP-MediaTypes-6.04-19.el10.noarch
+  perl-MIME-Base64-3.16-511.el10.x86_64
+  perl-Module-Load-1:0.36-511.el10.noarch
+  perl-Mozilla-CA-20231213-5.el10.noarch
+  perl-NDBM_File-1.17-515.el10_2.x86_64
+  perl-NTLM-1.09-41.el10.noarch
+  perl-Net-HTTP-6.23-6.el10.noarch
+  perl-Net-SSLeay-1.94-8.el10.x86_64
+  perl-POSIX-2.20-515.el10_2.x86_64
+  perl-PathTools-3.91-512.el10.x86_64
+  perl-Pod-Escapes-1:1.07-511.el10.noarch
+  perl-Pod-Perldoc-3.28.01-512.el10.noarch
+  perl-Pod-Simple-1:3.45-511.el10.noarch
+  perl-Pod-Usage-4:2.03-511.el10.noarch
+  perl-Scalar-List-Utils-5:1.63-511.el10.x86_64
+  perl-SelectSaver-1.02-515.el10_2.noarch
+  perl-Socket-4:2.038-511.el10.x86_64
+  perl-Storable-1:3.32-511.el10.x86_64
+  perl-Symbol-1.09-515.el10_2.noarch
+  perl-Term-ANSIColor-5.01-512.el10.noarch
+  perl-Term-Cap-1.18-511.el10.noarch
+  perl-TermReadKey-2.38-24.el10.x86_64
+  perl-Text-ParseWords-3.31-511.el10.noarch
+  perl-Text-Tabs+Wrap-2024.001-511.el10.noarch
+  perl-Thread-Queue-3.14-511.el10.noarch
+  perl-Time-Local-2:1.350-511.el10.noarch
+  perl-TimeDate-1:2.33-16.el10.noarch
+  perl-Try-Tiny-0.31-12.el10.noarch
+  perl-URI-5.27-3.el10.noarch
+  perl-WWW-RobotRules-6.02-41.el10.noarch
+  perl-XML-Parser-2.47-6.1.el10_1.x86_64
+  perl-base-2.27-515.el10_2.noarch
+  perl-constant-1.33-512.el10.noarch
+  perl-generators-1.16-7.el10.noarch
+  perl-if-0.61.000-515.el10_2.noarch
+  perl-interpreter-4:5.40.2-515.el10_2.x86_64
+  perl-lib-0.65-515.el10_2.x86_64
+  perl-libnet-3.15-512.el10.noarch
+  perl-libs-4:5.40.2-515.el10_2.x86_64
+  perl-libwww-perl-6.76-3.el10.noarch
+  perl-locale-1.12-515.el10_2.noarch
+  perl-macros-4:5.40.2-515.el10_2.noarch
+  perl-mro-1.29-515.el10_2.x86_64
+  perl-overload-1.37-515.el10_2.noarch
+  perl-overloading-0.02-515.el10_2.noarch
+  perl-parent-1:0.241-512.el10.noarch
+  perl-podlators-1:5.01-511.el10.noarch
+  perl-srpm-macros-1-57.el10.noarch
+  perl-subs-1.04-515.el10_2.noarch
+  perl-threads-1:2.40-511.el10.x86_64
+  perl-threads-shared-1.69-511.el10.x86_64
+  perl-vars-1.05-515.el10_2.noarch
+  perl-version-8:0.99.32-4.el10.x86_64
+  pesign-116-6.el10.x86_64
+  pixman-0.43.4-2.el10.x86_64
+  pkgconf-2.1.0-3.el10.x86_64
+  pkgconf-m4-2.1.0-3.el10.noarch
+  pkgconf-pkg-config-2.1.0-3.el10.x86_64
+  poppler-24.02.0-7.el10_2.2.x86_64
+  poppler-data-0.4.11-9.el10.noarch
+  poppler-glib-24.02.0-7.el10_2.2.x86_64
+  pyproject-srpm-macros-1.18.5-1.el10.noarch
+  python-srpm-macros-3.12-11.el10.noarch
+  qt6-srpm-macros-6.10.1-1.el10.noarch
+  redhat-rpm-config-295-1.el10.rocky.0.2.noarch
+  redhat-text-vf-fonts-4.1.0-1.el10.noarch
+  rpm-build-4.19.1.1-23.el10.x86_64
+  rpm-sign-4.19.1.1-23.el10.x86_64
+  rsvg-pixbuf-loader-2.57.1-9.el10.x86_64
+  rust-toolset-srpm-macros-1.92.0-2.el10_2.noarch
+  sgml-common-0.6.3-65.el10.noarch
+  shared-mime-info-2.3-8.el10.x86_64
+  source-highlight-3.1.9-25.el10.x86_64
+  strace-6.12-3.el10.x86_64
+  systemd-rpm-macros-257-23.el10_2.2.rocky.0.1.noarch
+  systemtap-5.4-3.el10.x86_64
+  systemtap-client-5.4-3.el10.x86_64
+  systemtap-devel-5.4-3.el10.x86_64
+  systemtap-runtime-5.4-3.el10.x86_64
+  tar-2:1.35-13.el10_2.x86_64
+  tbb-2021.11.0-7.el10.x86_64
+  unzip-6.0-69.el10.x86_64
+  urw-base35-bookman-fonts-20200910-21.el10.noarch
+  urw-base35-c059-fonts-20200910-21.el10.noarch
+  urw-base35-d050000l-fonts-20200910-21.el10.noarch
+  urw-base35-fonts-20200910-21.el10.noarch
+  urw-base35-fonts-common-20200910-21.el10.noarch
+  urw-base35-gothic-fonts-20200910-21.el10.noarch
+  urw-base35-nimbus-mono-ps-fonts-20200910-21.el10.noarch
+  urw-base35-nimbus-roman-fonts-20200910-21.el10.noarch
+  urw-base35-nimbus-sans-fonts-20200910-21.el10.noarch
+  urw-base35-p052-fonts-20200910-21.el10.noarch
+  urw-base35-standard-symbols-ps-fonts-20200910-21.el10.noarch
+  urw-base35-z003-fonts-20200910-21.el10.noarch
+  valgrind-1:3.26.0-5.el10.x86_64
+  valgrind-devel-1:3.26.0-5.el10.x86_64
+  valgrind-docs-1:3.26.0-5.el10.x86_64
+  valgrind-gdb-1:3.26.0-5.el10.x86_64
+  valgrind-scripts-1:3.26.0-5.el10.x86_64
+  xml-common-0.6.3-65.el10.noarch
+  xz-devel-1:5.6.2-4.el10_2.1.x86_64
+  zip-3.0-45.el10.x86_64
+  zlib-ng-compat-devel-2.2.3-3.el10_1.x86_64
+  zstd-1.5.5-9.el10.x86_64
+
+¡Listo!
+[cbasualdo@localhost ~]$ sudo dnf install -y bison gawk texinfo m4 patch wget curl rsync \
+ xz tar bzip2 gzip diffutils findutils make perl python3 git
+Última comprobación de caducidad de metadatos hecha hace 0:03:12, el mié 14 oct 2026 18:14:21.
+El paquete bison-3.8.2-9.el10.x86_64 ya está instalado.
+El paquete gawk-5.3.0-6.el10_2.1.x86_64 ya está instalado.
+El paquete m4-1.4.19-11.el10.x86_64 ya está instalado.
+El paquete patch-2.7.6-26.el10.x86_64 ya está instalado.
+El paquete curl-8.12.1-4.el10_2.7.x86_64 ya está instalado.
+El paquete xz-1:5.6.2-4.el10_2.1.x86_64 ya está instalado.
+El paquete tar-2:1.35-13.el10_2.x86_64 ya está instalado.
+El paquete bzip2-1.0.8-25.el10.x86_64 ya está instalado.
+El paquete gzip-1.13-4.el10_2.x86_64 ya está instalado.
+El paquete diffutils-3.10-8.el10.x86_64 ya está instalado.
+El paquete findutils-1:4.10.0-5.el10.x86_64 ya está instalado.
+El paquete make-1:4.4.1-9.el10.x86_64 ya está instalado.
+El paquete python3-3.12.15-1.el10_2.x86_64 ya está instalado.
+El paquete git-2.52.0-1.el10.x86_64 ya está instalado.
+Dependencias resueltas.
+============================================================================
+ Paquete                      Arq.   Versión                Repositorio
+                                                                       Tam.
+============================================================================
+Instalando:
+ perl                         x86_64 4:5.40.2-515.el10_2    appstream  12 k
+ rsync                        x86_64 3.5.0-3.el10_2         baseos    462 k
+ texinfo                      x86_64 7.1-6.el10             crb       1.3 M
+ wget                         x86_64 1.24.5-8.el10_2        appstream 791 k
+Instalando dependencias:
+ perl-Algorithm-Diff          noarch 1.2010-14.el10         appstream  46 k
+ perl-Archive-Tar             noarch 3.02-512.el10_2.2      appstream  71 k
+ perl-Archive-Zip             noarch 1.68-17.el10           appstream 114 k
+ perl-Attribute-Handlers      noarch 1.03-515.el10_2        appstream  26 k
+ perl-AutoSplit               noarch 5.74-515.el10_2        appstream  20 k
+ perl-Benchmark               noarch 1.25-515.el10_2        appstream  25 k
+ perl-CPAN                    noarch 2.36-514.el10_0        appstream 569 k
+ perl-CPAN-Meta               noarch 2.150010-511.el10      appstream 197 k
+ perl-CPAN-Meta-Requirements  noarch 2.143-11.el10          appstream  35 k
+ perl-CPAN-Meta-YAML          noarch 0.018-512.el10         appstream  26 k
+ perl-Class-Inspector         noarch 1.36-19.el10           appstream  30 k
+ perl-Compress-Bzip2          x86_64 2.28-21.el10           appstream  67 k
+ perl-Compress-Raw-Lzma       x86_64 2.212-3.el10           appstream  51 k
+ perl-Config-Extensions       noarch 0.03-515.el10_2        appstream  11 k
+ perl-Config-Perl-V           noarch 0.36-512.el10          appstream  22 k
+ perl-DBM_Filter              noarch 0.06-515.el10_2        appstream  25 k
+ perl-Data-OptList            noarch 0.114-7.el10           appstream  27 k
+ perl-Data-Section            noarch 0.200008-8.el10        appstream  25 k
+ perl-Devel-PPPort            x86_64 3.72-512.el10          appstream 219 k
+ perl-Devel-Peek              x86_64 1.34-515.el10_2        appstream  30 k
+ perl-Devel-SelfStubber       noarch 1.06-515.el10_2        appstream  13 k
+ perl-Devel-Size              x86_64 0.84-3.el10            appstream  31 k
+ perl-DirHandle               noarch 1.05-515.el10_2        appstream  11 k
+ perl-Dumpvalue               noarch 2.27-515.el10_2        appstream  17 k
+ perl-Encode-devel            x86_64 4:3.21-511.el10        appstream  41 k
+ perl-English                 noarch 1.11-515.el10_2        appstream  12 k
+ perl-Env                     noarch 1.06-511.el10          appstream  20 k
+ perl-Exporter-Tiny           noarch 1.006002-7.el10        appstream  56 k
+ perl-ExtUtils-CBuilder       noarch 1:0.280240-511.el10    appstream  52 k
+ perl-ExtUtils-Command        noarch 2:7.70-513.el10        appstream  14 k
+ perl-ExtUtils-Constant       noarch 0.25-515.el10_2        appstream  42 k
+ perl-ExtUtils-Embed          noarch 1.35-515.el10_2        appstream  16 k
+ perl-ExtUtils-Install        noarch 2.22-511.el10          appstream  43 k
+ perl-ExtUtils-MM-Utils       noarch 2:7.70-513.el10        appstream  12 k
+ perl-ExtUtils-MakeMaker      noarch 2:7.70-513.el10        appstream 295 k
+ perl-ExtUtils-Manifest       noarch 1:1.75-511.el10        appstream  34 k
+ perl-ExtUtils-Miniperl       noarch 1.14-515.el10_2        appstream  13 k
+ perl-ExtUtils-ParseXS        noarch 1:3.51-512.el10        appstream 189 k
+ perl-File-DosGlob            x86_64 1.12-515.el10_2        appstream  18 k
+ perl-File-Fetch              noarch 1.04-511.el10          appstream  30 k
+ perl-File-HomeDir            noarch 1.006-15.el10          appstream  60 k
+ perl-File-Which              noarch 1.27-14.el10           appstream  22 k
+ perl-FileCache               noarch 1.10-515.el10_2        appstream  13 k
+ perl-Filter                  x86_64 2:1.64-512.el10        appstream  88 k
+ perl-Filter-Simple           noarch 0.96-511.el10          appstream  27 k
+ perl-FindBin                 noarch 1.54-515.el10_2        appstream  13 k
+ perl-GDBM_File               x86_64 1:1.24-515.el10_2      appstream  41 k
+ perl-Hash-Util               x86_64 0.32-515.el10_2        appstream  33 k
+ perl-Hash-Util-FieldHash     x86_64 1.27-515.el10_2        appstream  37 k
+ perl-I18N-Collate            noarch 1.02-515.el10_2        appstream  13 k
+ perl-I18N-LangTags           noarch 0.45-515.el10_2        appstream  51 k
+ perl-IO-Compress-Lzma        noarch 2.206-8.el10           appstream  80 k
+ perl-IO-Zlib                 noarch 1:1.15-511.el10        appstream  20 k
+ perl-IPC-Cmd                 noarch 2:1.04-512.el10        appstream  40 k
+ perl-IPC-SysV                x86_64 2.09-512.el10          appstream  41 k
+ perl-IPC-System-Simple       noarch 1.30-16.el10           appstream  39 k
+ perl-JSON-PP                 noarch 1:4.16-513.el10        appstream  65 k
+ perl-List-MoreUtils-XS       x86_64 0.430-18.el10          appstream  63 k
+ perl-Locale-Maketext         noarch 1.33-512.el10          appstream  93 k
+ perl-Locale-Maketext-Simple  noarch 1:0.21-515.el10_2      appstream  16 k
+ perl-MIME-Charset            noarch 1.013.1-8.el10         appstream  48 k
+ perl-MRO-Compat              noarch 0.15-12.el10           appstream  25 k
+ perl-Math-BigInt             noarch 1:2.0030.03-3.el10     appstream 231 k
+ perl-Math-BigInt-FastCalc    x86_64 0.501.800-511.el10     appstream  28 k
+ perl-Math-Complex            noarch 1.62-515.el10_2        appstream  44 k
+ perl-Memoize                 noarch 1.16-515.el10_2        appstream  45 k
+ perl-Module-Build            noarch 2:0.42.34-7.el10       appstream 253 k
+ perl-Module-CoreList         noarch 1:5.20260119-1.el10    appstream  92 k
+ perl-Module-CoreList-tools   noarch 1:5.20260119-1.el10    appstream  16 k
+ perl-Module-Load-Conditional noarch 0.74-511.el10          appstream  22 k
+ perl-Module-Loaded           noarch 1:0.08-515.el10_2      appstream  12 k
+ perl-Module-Metadata         noarch 1.000038-512.el10      appstream  35 k
+ perl-Module-Signature        noarch 0.88-12.el10           appstream  82 k
+ perl-NEXT                    noarch 0.69-515.el10_2        appstream  19 k
+ perl-Net                     noarch 1.04-515.el10_2        appstream  21 k
+ perl-Net-Ping                noarch 2.76-511.el10          appstream  50 k
+ perl-ODBM_File               x86_64 1.18-515.el10_2        appstream  21 k
+ perl-Opcode                  x86_64 1.65-515.el10_2        appstream  34 k
+ perl-Package-Generator       noarch 1.106-34.el10          appstream  22 k
+ perl-Params-Check            noarch 1:0.38-511.el10        appstream  22 k
+ perl-Params-Util             x86_64 1.102-19.el10          appstream  33 k
+ perl-Perl-OSType             noarch 1.010-512.el10         appstream  23 k
+ perl-PerlIO-via-QuotedPrint  noarch 0.10-511.el10          appstream  22 k
+ perl-Pod-Checker             noarch 4:1.77-511.el10        appstream  32 k
+ perl-Pod-Functions           noarch 1.14-515.el10_2        appstream  13 k
+ perl-Pod-Html                noarch 1.35-515.el10_2        appstream  28 k
+ perl-Safe                    noarch 2.46-515.el10_2        appstream  23 k
+ perl-Search-Dict             noarch 1.07-515.el10_2        appstream  11 k
+ perl-SelfLoader              noarch 1.27-515.el10_2        appstream  20 k
+ perl-Software-License        noarch 0.104006-4.el10        appstream 154 k
+ perl-Sub-Exporter            noarch 0.991-7.el10           appstream  80 k
+ perl-Sub-Install             noarch 0.929-8.el10           appstream  23 k
+ perl-Sys-Hostname            x86_64 1.25-515.el10_2        appstream  16 k
+ perl-Sys-Syslog              x86_64 0.36-512.el10          appstream  47 k
+ perl-Term-Complete           noarch 1.403-515.el10_2       appstream  11 k
+ perl-Term-ReadLine           noarch 1.17-515.el10_2        appstream  17 k
+ perl-Term-Size-Perl          x86_64 0.031-22.el10          appstream  21 k
+ perl-Term-Table              noarch 0.018-513.el10         appstream  47 k
+ perl-Test                    noarch 1.31-515.el10_2        appstream  27 k
+ perl-Test-Harness            noarch 1:3.48-512.el10        appstream 282 k
+ perl-Test-Simple             noarch 3:1.302199-513.el10    appstream 602 k
+ perl-Test2-Suite             noarch 0.000163-4.el10        appstream 484 k
+ perl-Text-Abbrev             noarch 1.02-515.el10_2        appstream  11 k
+ perl-Text-Balanced           noarch 2.06-511.el10          appstream  49 k
+ perl-Text-Diff               noarch 1.45-25.el10           appstream  40 k
+ perl-Text-Glob               noarch 0.11-26.el10           appstream  13 k
+ perl-Text-Template           noarch 1.61-8.el10            appstream  59 k
+ perl-Text-Unidecode          noarch 1.30-27.el10           appstream 198 k
+ perl-Thread                  noarch 3.05-515.el10_2        appstream  16 k
+ perl-Thread-Semaphore        noarch 2.13-515.el10_2        appstream  14 k
+ perl-Tie                     noarch 4.6-515.el10_2         appstream  26 k
+ perl-Tie-File                noarch 1.09-515.el10_2        appstream  42 k
+ perl-Tie-Memoize             noarch 1.1-515.el10_2         appstream  13 k
+ perl-Tie-RefHash             noarch 1.40-511.el10          appstream  23 k
+ perl-Time                    noarch 1.04-515.el10_2        appstream  15 k
+ perl-Time-HiRes              x86_64 4:1.9777-511.el10      appstream  58 k
+ perl-Time-Piece              x86_64 1.3401-515.el10_2      appstream  39 k
+ perl-Unicode-Collate         x86_64 1.31-511.el10          appstream 660 k
+ perl-Unicode-EastAsianWidth  noarch 12.0-16.el10           crb        19 k
+ perl-Unicode-Normalize       x86_64 1.32-511.el10          appstream  74 k
+ perl-Unicode-UCD             noarch 0.78-515.el10_2        appstream  77 k
+ perl-User-pwent              noarch 1.05-515.el10_2        appstream  18 k
+ perl-autodie                 noarch 2.37-512.el10          appstream  98 k
+ perl-autouse                 noarch 1.11-515.el10_2        appstream  12 k
+ perl-bignum                  noarch 0.67-512.el10          appstream  53 k
+ perl-blib                    noarch 1.07-515.el10_2        appstream  11 k
+ perl-debugger                noarch 1.60-515.el10_2        appstream 132 k
+ perl-deprecate               noarch 0.04-515.el10_2        appstream  13 k
+ perl-devel                   x86_64 4:5.40.2-515.el10_2    appstream 748 k
+ perl-diagnostics             noarch 1.40-515.el10_2        appstream 216 k
+ perl-doc                     noarch 5.40.2-515.el10_2      appstream 4.8 M
+ perl-encoding                x86_64 4:3.00-511.el10        appstream  63 k
+ perl-encoding-warnings       noarch 0.14-515.el10_2        appstream  15 k
+ perl-experimental            noarch 0.032-511.el10         appstream  26 k
+ perl-fields                  noarch 2.27-515.el10_2        appstream  15 k
+ perl-filetest                noarch 1.03-515.el10_2        appstream  13 k
+ perl-inc-latest              noarch 2:0.500-30.el10        appstream  23 k
+ perl-less                    noarch 0.03-515.el10_2        appstream  12 k
+ perl-libintl-perl            x86_64 1.33-11.el10           appstream 835 k
+ perl-libnetcfg               noarch 4:5.40.2-515.el10_2    appstream  15 k
+ perl-local-lib               noarch 2.000029-9.el10        appstream  66 k
+ perl-meta-notation           noarch 5.40.2-515.el10_2      appstream 9.1 k
+ perl-open                    noarch 1.13-515.el10_2        appstream  15 k
+ perl-perlfaq                 noarch 5.20240218-511.el10    appstream 379 k
+ perl-ph                      x86_64 5.40.2-515.el10_2      appstream  41 k
+ perl-sigtrap                 noarch 1.10-515.el10_2        appstream  14 k
+ perl-sort                    noarch 2.05-515.el10_2        appstream  12 k
+ perl-utils                   noarch 5.40.2-515.el10_2      appstream  51 k
+ perl-vmsish                  noarch 1.04-515.el10_2        appstream  12 k
+ python3-pyparsing            noarch 3.1.1-7.el10           baseos    271 k
+ sombok                       x86_64 2.4.0-23.el10          appstream  48 k
+ systemtap-sdt-devel          x86_64 5.4-3.el10             appstream  70 k
+ systemtap-sdt-dtrace         x86_64 5.4-3.el10             appstream  70 k
+Instalando dependencias débiles:
+ perl-CPAN-DistnameInfo       noarch 0.12-32.el10           appstream  14 k
+ perl-File-ShareDir           noarch 1.118-14.el10          appstream  30 k
+ perl-List-MoreUtils          noarch 0.430-15.el10          appstream  62 k
+ perl-Term-Size-Any           noarch 0.002-45.el10          appstream  13 k
+ perl-Unicode-LineBreak       x86_64 2019.001-24.el10       appstream 120 k
+
+Resumen de la transacción
+============================================================================
+Instalar  162 Paquetes
+
+Tamaño total de la descarga: 19 M
+Tamaño instalado: 60 M
+Descargando paquetes:
+(1/162): perl-5.40.2-515.el10_2.x86_64.rpm   81 kB/s |  12 kB     00:00
+(2/162): perl-Algorithm-Diff-1.2010-14.el10 330 kB/s |  46 kB     00:00
+(3/162): perl-Archive-Tar-3.02-512.el10_2.2 583 kB/s |  71 kB     00:00
+(4/162): python3-pyparsing-3.1.1-7.el10.noa 628 kB/s | 271 kB     00:00
+(5/162): rsync-3.5.0-3.el10_2.x86_64.rpm    932 kB/s | 462 kB     00:00
+(6/162): perl-Archive-Zip-1.68-17.el10.noar 1.2 MB/s | 114 kB     00:00
+(7/162): perl-Benchmark-1.25-515.el10_2.noa 366 kB/s |  25 kB     00:00
+(8/162): perl-Attribute-Handlers-1.03-515.e 154 kB/s |  26 kB     00:00
+(9/162): perl-AutoSplit-5.74-515.el10_2.noa 121 kB/s |  20 kB     00:00
+(10/162): perl-CPAN-DistnameInfo-0.12-32.el 193 kB/s |  14 kB     00:00
+(11/162): perl-CPAN-2.36-514.el10_0.noarch. 3.1 MB/s | 569 kB     00:00
+(12/162): perl-CPAN-Meta-Requirements-2.143 358 kB/s |  35 kB     00:00
+(13/162): perl-CPAN-Meta-YAML-0.018-512.el1 417 kB/s |  26 kB     00:00
+(14/162): perl-CPAN-Meta-2.150010-511.el10. 953 kB/s | 197 kB     00:00
+(15/162): perl-Class-Inspector-1.36-19.el10 287 kB/s |  30 kB     00:00
+(16/162): perl-Compress-Bzip2-2.28-21.el10. 925 kB/s |  67 kB     00:00
+(17/162): perl-Compress-Raw-Lzma-2.212-3.el 800 kB/s |  51 kB     00:00
+(18/162): perl-Config-Extensions-0.03-515.e 184 kB/s |  11 kB     00:00
+(19/162): perl-Config-Perl-V-0.36-512.el10. 303 kB/s |  22 kB     00:00
+(20/162): perl-DBM_Filter-0.06-515.el10_2.n 401 kB/s |  25 kB     00:00
+(21/162): perl-Data-OptList-0.114-7.el10.no 445 kB/s |  27 kB     00:00
+(22/162): perl-Data-Section-0.200008-8.el10 325 kB/s |  25 kB     00:00
+(23/162): perl-Devel-Peek-1.34-515.el10_2.x 505 kB/s |  30 kB     00:00
+(24/162): perl-Devel-PPPort-3.72-512.el10.x 2.3 MB/s | 219 kB     00:00
+(25/162): perl-Devel-SelfStubber-1.06-515.e 199 kB/s |  13 kB     00:00
+(26/162): perl-Devel-Size-0.84-3.el10.x86_6 454 kB/s |  31 kB     00:00
+(27/162): perl-DirHandle-1.05-515.el10_2.no 189 kB/s |  11 kB     00:00
+(28/162): perl-Dumpvalue-2.27-515.el10_2.no 240 kB/s |  17 kB     00:00
+(29/162): perl-Encode-devel-3.21-511.el10.x 668 kB/s |  41 kB     00:00
+(30/162): perl-English-1.11-515.el10_2.noar 205 kB/s |  12 kB     00:00
+(31/162): perl-Env-1.06-511.el10.noarch.rpm 264 kB/s |  20 kB     00:00
+(32/162): perl-ExtUtils-CBuilder-0.280240-5 798 kB/s |  52 kB     00:00
+(33/162): perl-Exporter-Tiny-1.006002-7.el1 680 kB/s |  56 kB     00:00
+(34/162): perl-ExtUtils-Command-7.70-513.el 197 kB/s |  14 kB     00:00
+(35/162): perl-ExtUtils-Constant-0.25-515.e 603 kB/s |  42 kB     00:00
+(36/162): perl-ExtUtils-Embed-1.35-515.el10 232 kB/s |  16 kB     00:00
+(37/162): perl-ExtUtils-MM-Utils-7.70-513.e 183 kB/s |  12 kB     00:00
+(38/162): perl-ExtUtils-Install-2.22-511.el 413 kB/s |  43 kB     00:00
+(39/162): perl-ExtUtils-MakeMaker-7.70-513. 2.9 MB/s | 295 kB     00:00
+(40/162): perl-ExtUtils-Manifest-1.75-511.e 515 kB/s |  34 kB     00:00
+(41/162): perl-ExtUtils-Miniperl-1.14-515.e 194 kB/s |  13 kB     00:00
+(42/162): perl-ExtUtils-ParseXS-3.51-512.el 2.5 MB/s | 189 kB     00:00
+(43/162): perl-File-DosGlob-1.12-515.el10_2 298 kB/s |  18 kB     00:00
+(44/162): perl-File-Fetch-1.04-511.el10.noa 420 kB/s |  30 kB     00:00
+(45/162): perl-File-HomeDir-1.006-15.el10.n 962 kB/s |  60 kB     00:00
+(46/162): perl-File-ShareDir-1.118-14.el10. 332 kB/s |  30 kB     00:00
+(47/162): perl-File-Which-1.27-14.el10.noar 325 kB/s |  22 kB     00:00
+(48/162): perl-FileCache-1.10-515.el10_2.no 217 kB/s |  13 kB     00:00
+(49/162): perl-Filter-1.64-512.el10.x86_64. 964 kB/s |  88 kB     00:00
+(50/162): perl-Filter-Simple-0.96-511.el10. 267 kB/s |  27 kB     00:00
+(51/162): perl-FindBin-1.54-515.el10_2.noar 134 kB/s |  13 kB     00:00
+(52/162): perl-GDBM_File-1.24-515.el10_2.x8 653 kB/s |  41 kB     00:00
+(53/162): perl-Hash-Util-FieldHash-1.27-515 603 kB/s |  37 kB     00:00
+(54/162): perl-Hash-Util-0.32-515.el10_2.x8 429 kB/s |  33 kB     00:00
+(55/162): perl-I18N-Collate-1.02-515.el10_2 205 kB/s |  13 kB     00:00
+(56/162): perl-I18N-LangTags-0.45-515.el10_ 555 kB/s |  51 kB     00:00
+(57/162): perl-IO-Zlib-1.15-511.el10.noarch 202 kB/s |  20 kB     00:00
+(58/162): perl-IO-Compress-Lzma-2.206-8.el1 674 kB/s |  80 kB     00:00
+(59/162): perl-IPC-Cmd-1.04-512.el10.noarch 393 kB/s |  40 kB     00:00
+(60/162): perl-IPC-SysV-2.09-512.el10.x86_6 418 kB/s |  41 kB     00:00
+(61/162): perl-IPC-System-Simple-1.30-16.el 378 kB/s |  39 kB     00:00
+(62/162): perl-JSON-PP-4.16-513.el10.noarch 946 kB/s |  65 kB     00:00
+(63/162): perl-List-MoreUtils-0.430-15.el10 575 kB/s |  62 kB     00:00
+(64/162): perl-List-MoreUtils-XS-0.430-18.e 539 kB/s |  63 kB     00:00
+(65/162): perl-Locale-Maketext-1.33-512.el1 1.1 MB/s |  93 kB     00:00
+(66/162): perl-Locale-Maketext-Simple-0.21- 235 kB/s |  16 kB     00:00
+(67/162): perl-MIME-Charset-1.013.1-8.el10. 674 kB/s |  48 kB     00:00
+(68/162): perl-MRO-Compat-0.15-12.el10.noar 315 kB/s |  25 kB     00:00
+(69/162): perl-Math-BigInt-FastCalc-0.501.8 468 kB/s |  28 kB     00:00
+(70/162): perl-Math-Complex-1.62-515.el10_2 683 kB/s |  44 kB     00:00
+(71/162): perl-Math-BigInt-2.0030.03-3.el10 2.0 MB/s | 231 kB     00:00
+(72/162): perl-Memoize-1.16-515.el10_2.noar 675 kB/s |  45 kB     00:00
+(73/162): perl-Module-CoreList-5.20260119-1 1.3 MB/s |  92 kB     00:00
+(74/162): perl-Module-Build-0.42.34-7.el10. 2.6 MB/s | 253 kB     00:00
+(75/162): perl-Module-CoreList-tools-5.2026 223 kB/s |  16 kB     00:00
+(76/162): perl-Module-Load-Conditional-0.74 359 kB/s |  22 kB     00:00
+(77/162): perl-Module-Loaded-0.08-515.el10_ 197 kB/s |  12 kB     00:00
+(78/162): perl-Module-Metadata-1.000038-512 570 kB/s |  35 kB     00:00
+(79/162): perl-Module-Signature-0.88-12.el1 1.2 MB/s |  82 kB     00:00
+(80/162): perl-NEXT-0.69-515.el10_2.noarch. 288 kB/s |  19 kB     00:00
+(81/162): perl-Net-1.04-515.el10_2.noarch.r 339 kB/s |  21 kB     00:00
+(82/162): perl-Net-Ping-2.76-511.el10.noarc 800 kB/s |  50 kB     00:00
+(83/162): perl-ODBM_File-1.18-515.el10_2.x8 342 kB/s |  21 kB     00:00
+(84/162): perl-Opcode-1.65-515.el10_2.x86_6 517 kB/s |  34 kB     00:00
+(85/162): perl-Package-Generator-1.106-34.e 372 kB/s |  22 kB     00:00
+(86/162): perl-Params-Check-0.38-511.el10.n 336 kB/s |  22 kB     00:00
+(87/162): perl-Params-Util-1.102-19.el10.x8 509 kB/s |  33 kB     00:00
+(88/162): perl-Perl-OSType-1.010-512.el10.n 363 kB/s |  23 kB     00:00
+(89/162): perl-PerlIO-via-QuotedPrint-0.10- 359 kB/s |  22 kB     00:00
+(90/162): perl-Pod-Checker-1.77-511.el10.no 512 kB/s |  32 kB     00:00
+(91/162): perl-Pod-Functions-1.14-515.el10_ 210 kB/s |  13 kB     00:00
+(92/162): perl-Pod-Html-1.35-515.el10_2.noa 453 kB/s |  28 kB     00:00
+(93/162): perl-Safe-2.46-515.el10_2.noarch. 334 kB/s |  23 kB     00:00
+(94/162): perl-Search-Dict-1.07-515.el10_2. 168 kB/s |  11 kB     00:00
+(95/162): perl-SelfLoader-1.27-515.el10_2.n 285 kB/s |  20 kB     00:00
+(96/162): perl-Software-License-0.104006-4. 2.1 MB/s | 154 kB     00:00
+(97/162): perl-Sub-Install-0.929-8.el10.noa 356 kB/s |  23 kB     00:00
+(98/162): perl-Sub-Exporter-0.991-7.el10.no 1.1 MB/s |  80 kB     00:00
+(99/162): perl-Sys-Hostname-1.25-515.el10_2 190 kB/s |  16 kB     00:00
+(100/162): perl-Sys-Syslog-0.36-512.el10.x8 563 kB/s |  47 kB     00:00
+(101/162): perl-Term-Complete-1.403-515.el1 143 kB/s |  11 kB     00:00
+(102/162): perl-Term-ReadLine-1.17-515.el10 241 kB/s |  17 kB     00:00
+(103/162): perl-Term-Size-Any-0.002-45.el10 201 kB/s |  13 kB     00:00
+(104/162): perl-Term-Size-Perl-0.031-22.el1 254 kB/s |  21 kB     00:00
+(105/162): perl-Term-Table-0.018-513.el10.n 748 kB/s |  47 kB     00:00
+(106/162): perl-Test-1.31-515.el10_2.noarch 307 kB/s |  27 kB     00:00
+(107/162): perl-Test-Harness-3.48-512.el10. 2.3 MB/s | 282 kB     00:00
+(108/162): perl-Test-Simple-1.302199-513.el 4.1 MB/s | 602 kB     00:00
+(109/162): perl-Text-Abbrev-1.02-515.el10_2 157 kB/s |  11 kB     00:00
+(110/162): perl-Test2-Suite-0.000163-4.el10 3.0 MB/s | 484 kB     00:00
+(111/162): perl-Text-Balanced-2.06-511.el10 581 kB/s |  49 kB     00:00
+(112/162): perl-Text-Diff-1.45-25.el10.noar 547 kB/s |  40 kB     00:00
+(113/162): perl-Text-Glob-0.11-26.el10.noar 203 kB/s |  13 kB     00:00
+(114/162): perl-Text-Template-1.61-8.el10.n 928 kB/s |  59 kB     00:00
+(115/162): perl-Text-Unidecode-1.30-27.el10 1.8 MB/s | 198 kB     00:00
+(116/162): perl-Thread-3.05-515.el10_2.noar 243 kB/s |  16 kB     00:00
+(117/162): perl-Thread-Semaphore-2.13-515.e 221 kB/s |  14 kB     00:00
+(118/162): perl-Tie-4.6-515.el10_2.noarch.r 318 kB/s |  26 kB     00:00
+(119/162): perl-Tie-File-1.09-515.el10_2.no 460 kB/s |  42 kB     00:00
+(120/162): perl-Tie-Memoize-1.1-515.el10_2. 116 kB/s |  13 kB     00:00
+(121/162): perl-Tie-RefHash-1.40-511.el10.n 317 kB/s |  23 kB     00:00
+(122/162): perl-Time-1.04-515.el10_2.noarch 231 kB/s |  15 kB     00:00
+(123/162): perl-Time-HiRes-1.9777-511.el10. 795 kB/s |  58 kB     00:00
+(124/162): perl-Time-Piece-1.3401-515.el10_ 642 kB/s |  39 kB     00:00
+(125/162): perl-Unicode-LineBreak-2019.001- 1.6 MB/s | 120 kB     00:00
+(126/162): perl-Unicode-Normalize-1.32-511. 1.1 MB/s |  74 kB     00:00
+(127/162): perl-Unicode-UCD-0.78-515.el10_2 892 kB/s |  77 kB     00:00
+(128/162): perl-User-pwent-1.05-515.el10_2. 223 kB/s |  18 kB     00:00
+(129/162): perl-Unicode-Collate-1.31-511.el 3.3 MB/s | 660 kB     00:00
+(130/162): perl-autouse-1.11-515.el10_2.noa 168 kB/s |  12 kB     00:00
+(131/162): perl-bignum-0.67-512.el10.noarch 795 kB/s |  53 kB     00:00
+(132/162): perl-autodie-2.37-512.el10.noarc 1.0 MB/s |  98 kB     00:00
+(133/162): perl-blib-1.07-515.el10_2.noarch 162 kB/s |  11 kB     00:00
+(134/162): perl-deprecate-0.04-515.el10_2.n 207 kB/s |  13 kB     00:00
+(135/162): perl-debugger-1.60-515.el10_2.no 1.6 MB/s | 132 kB     00:00
+(136/162): perl-diagnostics-1.40-515.el10_2 2.4 MB/s | 216 kB     00:00
+(137/162): perl-devel-5.40.2-515.el10_2.x86 5.7 MB/s | 748 kB     00:00
+(138/162): perl-encoding-3.00-511.el10.x86_ 728 kB/s |  63 kB     00:00
+(139/162): perl-encoding-warnings-0.14-515. 230 kB/s |  15 kB     00:00
+(140/162): perl-fields-2.27-515.el10_2.noar 165 kB/s |  15 kB     00:00
+(141/162): perl-experimental-0.032-511.el10 255 kB/s |  26 kB     00:00
+(142/162): perl-filetest-1.03-515.el10_2.no 128 kB/s |  13 kB     00:00
+(143/162): perl-inc-latest-0.500-30.el10.no 223 kB/s |  23 kB     00:00
+(144/162): perl-less-0.03-515.el10_2.noarch  97 kB/s |  12 kB     00:00
+(145/162): perl-doc-5.40.2-515.el10_2.noarc 9.0 MB/s | 4.8 MB     00:00
+(146/162): perl-libintl-perl-1.33-11.el10.x 4.4 MB/s | 835 kB     00:00
+(147/162): perl-libnetcfg-5.40.2-515.el10_2 190 kB/s |  15 kB     00:00
+(148/162): perl-local-lib-2.000029-9.el10.n 1.1 MB/s |  66 kB     00:00
+(149/162): perl-meta-notation-5.40.2-515.el 162 kB/s | 9.1 kB     00:00
+(150/162): perl-open-1.13-515.el10_2.noarch 254 kB/s |  15 kB     00:00
+(151/162): perl-perlfaq-5.20240218-511.el10 4.7 MB/s | 379 kB     00:00
+(152/162): perl-ph-5.40.2-515.el10_2.x86_64 675 kB/s |  41 kB     00:00
+(153/162): perl-sigtrap-1.10-515.el10_2.noa 243 kB/s |  14 kB     00:00
+(154/162): perl-sort-2.05-515.el10_2.noarch 168 kB/s |  12 kB     00:00
+(155/162): perl-utils-5.40.2-515.el10_2.noa 698 kB/s |  51 kB     00:00
+(156/162): perl-vmsish-1.04-515.el10_2.noar 179 kB/s |  12 kB     00:00
+(157/162): systemtap-sdt-devel-5.4-3.el10.x 990 kB/s |  70 kB     00:00
+(158/162): sombok-2.4.0-23.el10.x86_64.rpm  563 kB/s |  48 kB     00:00
+(159/162): systemtap-sdt-dtrace-5.4-3.el10. 823 kB/s |  70 kB     00:00
+(160/162): wget-1.24.5-8.el10_2.x86_64.rpm  8.1 MB/s | 791 kB     00:00
+(161/162): perl-Unicode-EastAsianWidth-12.0  39 kB/s |  19 kB     00:00
+(162/162): texinfo-7.1-6.el10.x86_64.rpm    1.1 MB/s | 1.3 MB     00:01
+----------------------------------------------------------------------------
+Total                                       2.4 MB/s |  19 MB     00:07
+Ejecutando verificación de operación
+Verificación de operación exitosa.
+Ejecutando prueba de operaciones
+Prueba de operación exitosa.
+Ejecutando operación
+  Preparando          :                                                 1/1
+  Instalando          : perl-Time-HiRes-4:1.9777-511.el10.x86_64      1/162
+  Instalando          : perl-ExtUtils-Manifest-1:1.75-511.el10.no     2/162
+  Instalando          : perl-Unicode-Normalize-1.32-511.el10.x86_     3/162
+  Instalando          : perl-ExtUtils-ParseXS-1:3.51-512.el10.noa     4/162
+  Instalando          : perl-CPAN-Meta-Requirements-2.143-11.el10     5/162
+  Instalando          : perl-meta-notation-5.40.2-515.el10_2.noar     6/162
+  Instalando          : perl-Tie-4.6-515.el10_2.noarch                7/162
+  Instalando          : perl-Term-ReadLine-1.17-515.el10_2.noarch     8/162
+  Instalando          : perl-Perl-OSType-1.010-512.el10.noarch        9/162
+  Instalando          : perl-Params-Util-1.102-19.el10.x86_64        10/162
+  Instalando          : perl-Module-Metadata-1.000038-512.el10.no    11/162
+  Instalando          : perl-Module-CoreList-1:5.20260119-1.el10.    12/162
+  Instalando          : perl-Filter-2:1.64-512.el10.x86_64           13/162
+  Instalando          : perl-Devel-Peek-1.34-515.el10_2.x86_64       14/162
+  Instalando          : perl-Dumpvalue-2.27-515.el10_2.noarch        15/162
+  Instalando          : perl-encoding-4:3.00-511.el10.x86_64         16/162
+  Instalando          : perl-IO-Zlib-1:1.15-511.el10.noarch          17/162
+  Instalando          : perl-Net-Ping-2.76-511.el10.noarch           18/162
+  Instalando          : perl-doc-5.40.2-515.el10_2.noarch            19/162
+  Instalando          : perl-autouse-1.11-515.el10_2.noarch          20/162
+  Instalando          : perl-User-pwent-1.05-515.el10_2.noarch       21/162
+  Instalando          : perl-Tie-RefHash-1.40-511.el10.noarch        22/162
+  Instalando          : perl-Text-Balanced-2.06-511.el10.noarch      23/162
+  Instalando          : perl-Sys-Hostname-1.25-515.el10_2.x86_64     24/162
+  Instalando          : perl-Sub-Install-0.929-8.el10.noarch         25/162
+  Instalando          : perl-SelfLoader-1.27-515.el10_2.noarch       26/162
+  Instalando          : perl-Pod-Html-1.35-515.el10_2.noarch         27/162
+  Instalando          : perl-Opcode-1.65-515.el10_2.x86_64           28/162
+  Instalando          : perl-Safe-2.46-515.el10_2.noarch             29/162
+  Instalando          : perl-Math-Complex-1.62-515.el10_2.noarch     30/162
+  Instalando          : perl-Math-BigInt-1:2.0030.03-3.el10.noarc    31/162
+  Instalando          : perl-JSON-PP-1:4.16-513.el10.noarch          32/162
+  Instalando          : perl-I18N-LangTags-0.45-515.el10_2.noarch    33/162
+  Instalando          : perl-Locale-Maketext-1.33-512.el10.noarch    34/162
+  Instalando          : perl-Locale-Maketext-Simple-1:0.21-515.el    35/162
+  Instalando          : perl-Params-Check-1:0.38-511.el10.noarch     36/162
+  Instalando          : perl-Module-Load-Conditional-0.74-511.el1    37/162
+  Instalando          : perl-Hash-Util-FieldHash-1.27-515.el10_2.    38/162
+  Instalando          : perl-Hash-Util-0.32-515.el10_2.x86_64        39/162
+  Instalando          : perl-ExtUtils-MM-Utils-2:7.70-513.el10.no    40/162
+  Instalando          : perl-IPC-Cmd-2:1.04-512.el10.noarch          41/162
+  Instalando          : perl-ExtUtils-Constant-0.25-515.el10_2.no    42/162
+  Instalando          : perl-ExtUtils-Command-2:7.70-513.el10.noa    43/162
+  Instalando          : perl-DirHandle-1.05-515.el10_2.noarch        44/162
+  Instalando          : perl-Devel-PPPort-3.72-512.el10.x86_64       45/162
+  Instalando          : perl-CPAN-Meta-YAML-0.018-512.el10.noarch    46/162
+  Instalando          : perl-CPAN-Meta-2.150010-511.el10.noarch      47/162
+  Instalando          : perl-Benchmark-1.25-515.el10_2.noarch        48/162
+  Instalando          : perl-Test-Harness-1:3.48-512.el10.noarch     49/162
+  Instalando          : perl-AutoSplit-5.74-515.el10_2.noarch        50/162
+  Instalando          : perl-fields-2.27-515.el10_2.noarch           51/162
+  Instalando          : perl-Math-BigInt-FastCalc-0.501.800-511.e    52/162
+  Instalando          : perl-bignum-0.67-512.el10.noarch             53/162
+  Instalando          : perl-Devel-SelfStubber-1.06-515.el10_2.no    54/162
+  Instalando          : perl-Data-OptList-0.114-7.el10.noarch        55/162
+  Instalando          : perl-Filter-Simple-0.96-511.el10.noarch      56/162
+  Instalando          : perl-open-1.13-515.el10_2.noarch             57/162
+  Instalando          : perl-debugger-1.60-515.el10_2.noarch         58/162
+  Instalando          : perl-Module-CoreList-tools-1:5.20260119-1    59/162
+  Instalando          : perl-Env-1.06-511.el10.noarch                60/162
+  Instalando          : perl-sigtrap-1.10-515.el10_2.noarch          61/162
+  Instalando          : perl-Unicode-Collate-1.31-511.el10.x86_64    62/162
+  Instalando          : perl-Unicode-UCD-0.78-515.el10_2.noarch      63/162
+  Instalando          : perl-Unicode-EastAsianWidth-12.0-16.el10.    64/162
+  Instalando          : sombok-2.4.0-23.el10.x86_64                  65/162
+  Instalando          : perl-vmsish-1.04-515.el10_2.noarch           66/162
+  Instalando          : perl-utils-5.40.2-515.el10_2.noarch          67/162
+  Instalando          : perl-sort-2.05-515.el10_2.noarch             68/162
+  Instalando          : perl-ph-5.40.2-515.el10_2.x86_64             69/162
+  Instalando          : perl-perlfaq-5.20240218-511.el10.noarch      70/162
+  Instalando          : perl-local-lib-2.000029-9.el10.noarch        71/162
+  Instalando          : perl-less-0.03-515.el10_2.noarch             72/162
+  Instalando          : perl-filetest-1.03-515.el10_2.noarch         73/162
+  Instalando          : perl-experimental-0.032-511.el10.noarch      74/162
+  Instalando          : perl-encoding-warnings-0.14-515.el10_2.no    75/162
+  Instalando          : perl-diagnostics-1.40-515.el10_2.noarch      76/162
+  Instalando          : perl-deprecate-0.04-515.el10_2.noarch        77/162
+  Instalando          : perl-blib-1.07-515.el10_2.noarch             78/162
+  Instalando          : perl-Time-Piece-1.3401-515.el10_2.x86_64     79/162
+  Instalando          : perl-Time-1.04-515.el10_2.noarch             80/162
+  Instalando          : perl-Tie-Memoize-1.1-515.el10_2.noarch       81/162
+  Instalando          : perl-Tie-File-1.09-515.el10_2.noarch         82/162
+  Instalando          : perl-Thread-Semaphore-2.13-515.el10_2.noa    83/162
+  Instalando          : perl-Thread-3.05-515.el10_2.noarch           84/162
+  Instalando          : perl-Text-Unidecode-1.30-27.el10.noarch      85/162
+  Instalando          : perl-Text-Template-1.61-8.el10.noarch        86/162
+  Instalando          : perl-Text-Glob-0.11-26.el10.noarch           87/162
+  Instalando          : perl-Text-Abbrev-1.02-515.el10_2.noarch      88/162
+  Instalando          : perl-Test-1.31-515.el10_2.noarch             89/162
+  Instalando          : perl-Term-Size-Perl-0.031-22.el10.x86_64     90/162
+  Instalando          : perl-Term-Size-Any-0.002-45.el10.noarch      91/162
+  Instalando          : perl-Term-Complete-1.403-515.el10_2.noarc    92/162
+  Instalando          : perl-Sys-Syslog-0.36-512.el10.x86_64         93/162
+  Instalando          : perl-Search-Dict-1.07-515.el10_2.noarch      94/162
+  Instalando          : perl-Pod-Functions-1.14-515.el10_2.noarch    95/162
+  Instalando          : perl-Pod-Checker-4:1.77-511.el10.noarch      96/162
+  Instalando          : perl-PerlIO-via-QuotedPrint-0.10-511.el10    97/162
+  Instalando          : perl-Package-Generator-1.106-34.el10.noar    98/162
+  Instalando          : perl-Sub-Exporter-0.991-7.el10.noarch        99/162
+  Instalando          : perl-ODBM_File-1.18-515.el10_2.x86_64       100/162
+  Instalando          : perl-Net-1.04-515.el10_2.noarch             101/162
+  Instalando          : perl-NEXT-0.69-515.el10_2.noarch            102/162
+  Instalando          : perl-Module-Loaded-1:0.08-515.el10_2.noar   103/162
+  Instalando          : perl-Memoize-1.16-515.el10_2.noarch         104/162
+  Instalando          : perl-MRO-Compat-0.15-12.el10.noarch         105/162
+  Instalando          : perl-Data-Section-0.200008-8.el10.noarch    106/162
+  Instalando          : perl-Software-License-0.104006-4.el10.noa   107/162
+  Instalando          : perl-MIME-Charset-1.013.1-8.el10.noarch     108/162
+  Instalando          : perl-Unicode-LineBreak-2019.001-24.el10.x   109/162
+  Instalando          : perl-Term-Table-0.018-513.el10.noarch       110/162
+  Instalando          : perl-Test-Simple-3:1.302199-513.el10.noar   111/162
+  Instalando          : perl-Test2-Suite-0.000163-4.el10.noarch     112/162
+  Instalando          : perl-List-MoreUtils-XS-0.430-18.el10.x86_   113/162
+  Instalando          : perl-IPC-System-Simple-1.30-16.el10.noarc   114/162
+  Instalando          : perl-autodie-2.37-512.el10.noarch           115/162
+  Instalando          : perl-IPC-SysV-2.09-512.el10.x86_64          116/162
+  Instalando          : perl-I18N-Collate-1.02-515.el10_2.noarch    117/162
+  Instalando          : perl-GDBM_File-1:1.24-515.el10_2.x86_64     118/162
+  Instalando          : perl-FindBin-1.54-515.el10_2.noarch         119/162
+  Instalando          : perl-FileCache-1.10-515.el10_2.noarch       120/162
+  Instalando          : perl-File-Which-1.27-14.el10.noarch         121/162
+  Instalando          : perl-File-HomeDir-1.006-15.el10.noarch      122/162
+  Instalando          : perl-File-DosGlob-1.12-515.el10_2.x86_64    123/162
+  Instalando          : perl-Exporter-Tiny-1.006002-7.el10.noarch   124/162
+  Instalando          : perl-List-MoreUtils-0.430-15.el10.noarch    125/162
+  Instalando          : perl-English-1.11-515.el10_2.noarch         126/162
+  Instalando          : perl-Devel-Size-0.84-3.el10.x86_64          127/162
+  Instalando          : perl-DBM_Filter-0.06-515.el10_2.noarch      128/162
+  Instalando          : perl-Config-Perl-V-0.36-512.el10.noarch     129/162
+  Instalando          : perl-Config-Extensions-0.03-515.el10_2.no   130/162
+  Instalando          : perl-Compress-Raw-Lzma-2.212-3.el10.x86_6   131/162
+  Instalando          : perl-IO-Compress-Lzma-2.206-8.el10.noarch   132/162
+  Instalando          : perl-Compress-Bzip2-2.28-21.el10.x86_64     133/162
+  Instalando          : perl-Class-Inspector-1.36-19.el10.noarch    134/162
+  Instalando          : perl-File-ShareDir-1.118-14.el10.noarch     135/162
+  Instalando          : perl-libintl-perl-1.33-11.el10.x86_64       136/162
+  Instalando          : perl-CPAN-DistnameInfo-0.12-32.el10.noarc   137/162
+  Instalando          : perl-Attribute-Handlers-1.03-515.el10_2.n   138/162
+  Instalando          : perl-Archive-Zip-1.68-17.el10.noarch        139/162
+  Instalando          : perl-Algorithm-Diff-1.2010-14.el10.noarch   140/162
+  Instalando          : perl-Text-Diff-1.45-25.el10.noarch          141/162
+  Instalando          : perl-Archive-Tar-3.02-512.el10_2.2.noarch   142/162
+  Instalando          : perl-Module-Signature-0.88-12.el10.noarch   143/162
+  Instalando          : rsync-3.5.0-3.el10_2.x86_64                 144/162
+  Instalando          : perl-File-Fetch-1.04-511.el10.noarch        145/162
+  Instalando          : python3-pyparsing-3.1.1-7.el10.noarch       146/162
+  Instalando          : systemtap-sdt-dtrace-5.4-3.el10.x86_64      147/162
+  Instalando          : systemtap-sdt-devel-5.4-3.el10.x86_64       148/162
+  Instalando          : perl-ExtUtils-Install-2.22-511.el10.noarc   149/162
+  Instalando          : perl-devel-4:5.40.2-515.el10_2.x86_64       150/162
+  Instalando          : perl-ExtUtils-MakeMaker-2:7.70-513.el10.n   151/162
+  Instalando          : perl-ExtUtils-CBuilder-1:0.280240-511.el1   152/162
+  Instalando          : perl-ExtUtils-Embed-1.35-515.el10_2.noarc   153/162
+  Instalando          : perl-ExtUtils-Miniperl-1.14-515.el10_2.no   154/162
+  Instalando          : perl-libnetcfg-4:5.40.2-515.el10_2.noarch   155/162
+  Instalando          : perl-Encode-devel-4:3.21-511.el10.x86_64    156/162
+  Instalando          : perl-inc-latest-2:0.500-30.el10.noarch      157/162
+  Instalando          : perl-Module-Build-2:0.42.34-7.el10.noarch   158/162
+  Instalando          : perl-CPAN-2.36-514.el10_0.noarch            159/162
+  Instalando          : perl-4:5.40.2-515.el10_2.x86_64             160/162
+  Instalando          : texinfo-7.1-6.el10.x86_64                   161/162
+  Instalando          : wget-1.24.5-8.el10_2.x86_64                 162/162
+  Ejecutando scriptlet: wget-1.24.5-8.el10_2.x86_64                 162/162
+
+Instalado:
+  perl-4:5.40.2-515.el10_2.x86_64
+  perl-Algorithm-Diff-1.2010-14.el10.noarch
+  perl-Archive-Tar-3.02-512.el10_2.2.noarch
+  perl-Archive-Zip-1.68-17.el10.noarch
+  perl-Attribute-Handlers-1.03-515.el10_2.noarch
+  perl-AutoSplit-5.74-515.el10_2.noarch
+  perl-Benchmark-1.25-515.el10_2.noarch
+  perl-CPAN-2.36-514.el10_0.noarch
+  perl-CPAN-DistnameInfo-0.12-32.el10.noarch
+  perl-CPAN-Meta-2.150010-511.el10.noarch
+  perl-CPAN-Meta-Requirements-2.143-11.el10.noarch
+  perl-CPAN-Meta-YAML-0.018-512.el10.noarch
+  perl-Class-Inspector-1.36-19.el10.noarch
+  perl-Compress-Bzip2-2.28-21.el10.x86_64
+  perl-Compress-Raw-Lzma-2.212-3.el10.x86_64
+  perl-Config-Extensions-0.03-515.el10_2.noarch
+  perl-Config-Perl-V-0.36-512.el10.noarch
+  perl-DBM_Filter-0.06-515.el10_2.noarch
+  perl-Data-OptList-0.114-7.el10.noarch
+  perl-Data-Section-0.200008-8.el10.noarch
+  perl-Devel-PPPort-3.72-512.el10.x86_64
+  perl-Devel-Peek-1.34-515.el10_2.x86_64
+  perl-Devel-SelfStubber-1.06-515.el10_2.noarch
+  perl-Devel-Size-0.84-3.el10.x86_64
+  perl-DirHandle-1.05-515.el10_2.noarch
+  perl-Dumpvalue-2.27-515.el10_2.noarch
+  perl-Encode-devel-4:3.21-511.el10.x86_64
+  perl-English-1.11-515.el10_2.noarch
+  perl-Env-1.06-511.el10.noarch
+  perl-Exporter-Tiny-1.006002-7.el10.noarch
+  perl-ExtUtils-CBuilder-1:0.280240-511.el10.noarch
+  perl-ExtUtils-Command-2:7.70-513.el10.noarch
+  perl-ExtUtils-Constant-0.25-515.el10_2.noarch
+  perl-ExtUtils-Embed-1.35-515.el10_2.noarch
+  perl-ExtUtils-Install-2.22-511.el10.noarch
+  perl-ExtUtils-MM-Utils-2:7.70-513.el10.noarch
+  perl-ExtUtils-MakeMaker-2:7.70-513.el10.noarch
+  perl-ExtUtils-Manifest-1:1.75-511.el10.noarch
+  perl-ExtUtils-Miniperl-1.14-515.el10_2.noarch
+  perl-ExtUtils-ParseXS-1:3.51-512.el10.noarch
+  perl-File-DosGlob-1.12-515.el10_2.x86_64
+  perl-File-Fetch-1.04-511.el10.noarch
+  perl-File-HomeDir-1.006-15.el10.noarch
+  perl-File-ShareDir-1.118-14.el10.noarch
+  perl-File-Which-1.27-14.el10.noarch
+  perl-FileCache-1.10-515.el10_2.noarch
+  perl-Filter-2:1.64-512.el10.x86_64
+  perl-Filter-Simple-0.96-511.el10.noarch
+  perl-FindBin-1.54-515.el10_2.noarch
+  perl-GDBM_File-1:1.24-515.el10_2.x86_64
+  perl-Hash-Util-0.32-515.el10_2.x86_64
+  perl-Hash-Util-FieldHash-1.27-515.el10_2.x86_64
+  perl-I18N-Collate-1.02-515.el10_2.noarch
+  perl-I18N-LangTags-0.45-515.el10_2.noarch
+  perl-IO-Compress-Lzma-2.206-8.el10.noarch
+  perl-IO-Zlib-1:1.15-511.el10.noarch
+  perl-IPC-Cmd-2:1.04-512.el10.noarch
+  perl-IPC-SysV-2.09-512.el10.x86_64
+  perl-IPC-System-Simple-1.30-16.el10.noarch
+  perl-JSON-PP-1:4.16-513.el10.noarch
+  perl-List-MoreUtils-0.430-15.el10.noarch
+  perl-List-MoreUtils-XS-0.430-18.el10.x86_64
+  perl-Locale-Maketext-1.33-512.el10.noarch
+  perl-Locale-Maketext-Simple-1:0.21-515.el10_2.noarch
+  perl-MIME-Charset-1.013.1-8.el10.noarch
+  perl-MRO-Compat-0.15-12.el10.noarch
+  perl-Math-BigInt-1:2.0030.03-3.el10.noarch
+  perl-Math-BigInt-FastCalc-0.501.800-511.el10.x86_64
+  perl-Math-Complex-1.62-515.el10_2.noarch
+  perl-Memoize-1.16-515.el10_2.noarch
+  perl-Module-Build-2:0.42.34-7.el10.noarch
+  perl-Module-CoreList-1:5.20260119-1.el10.noarch
+  perl-Module-CoreList-tools-1:5.20260119-1.el10.noarch
+  perl-Module-Load-Conditional-0.74-511.el10.noarch
+  perl-Module-Loaded-1:0.08-515.el10_2.noarch
+  perl-Module-Metadata-1.000038-512.el10.noarch
+  perl-Module-Signature-0.88-12.el10.noarch
+  perl-NEXT-0.69-515.el10_2.noarch
+  perl-Net-1.04-515.el10_2.noarch
+  perl-Net-Ping-2.76-511.el10.noarch
+  perl-ODBM_File-1.18-515.el10_2.x86_64
+  perl-Opcode-1.65-515.el10_2.x86_64
+  perl-Package-Generator-1.106-34.el10.noarch
+  perl-Params-Check-1:0.38-511.el10.noarch
+  perl-Params-Util-1.102-19.el10.x86_64
+  perl-Perl-OSType-1.010-512.el10.noarch
+  perl-PerlIO-via-QuotedPrint-0.10-511.el10.noarch
+  perl-Pod-Checker-4:1.77-511.el10.noarch
+  perl-Pod-Functions-1.14-515.el10_2.noarch
+  perl-Pod-Html-1.35-515.el10_2.noarch
+  perl-Safe-2.46-515.el10_2.noarch
+  perl-Search-Dict-1.07-515.el10_2.noarch
+  perl-SelfLoader-1.27-515.el10_2.noarch
+  perl-Software-License-0.104006-4.el10.noarch
+  perl-Sub-Exporter-0.991-7.el10.noarch
+  perl-Sub-Install-0.929-8.el10.noarch
+  perl-Sys-Hostname-1.25-515.el10_2.x86_64
+  perl-Sys-Syslog-0.36-512.el10.x86_64
+  perl-Term-Complete-1.403-515.el10_2.noarch
+  perl-Term-ReadLine-1.17-515.el10_2.noarch
+  perl-Term-Size-Any-0.002-45.el10.noarch
+  perl-Term-Size-Perl-0.031-22.el10.x86_64
+  perl-Term-Table-0.018-513.el10.noarch
+  perl-Test-1.31-515.el10_2.noarch
+  perl-Test-Harness-1:3.48-512.el10.noarch
+  perl-Test-Simple-3:1.302199-513.el10.noarch
+  perl-Test2-Suite-0.000163-4.el10.noarch
+  perl-Text-Abbrev-1.02-515.el10_2.noarch
+  perl-Text-Balanced-2.06-511.el10.noarch
+  perl-Text-Diff-1.45-25.el10.noarch
+  perl-Text-Glob-0.11-26.el10.noarch
+  perl-Text-Template-1.61-8.el10.noarch
+  perl-Text-Unidecode-1.30-27.el10.noarch
+  perl-Thread-3.05-515.el10_2.noarch
+  perl-Thread-Semaphore-2.13-515.el10_2.noarch
+  perl-Tie-4.6-515.el10_2.noarch
+  perl-Tie-File-1.09-515.el10_2.noarch
+  perl-Tie-Memoize-1.1-515.el10_2.noarch
+  perl-Tie-RefHash-1.40-511.el10.noarch
+  perl-Time-1.04-515.el10_2.noarch
+  perl-Time-HiRes-4:1.9777-511.el10.x86_64
+  perl-Time-Piece-1.3401-515.el10_2.x86_64
+  perl-Unicode-Collate-1.31-511.el10.x86_64
+  perl-Unicode-EastAsianWidth-12.0-16.el10.noarch
+  perl-Unicode-LineBreak-2019.001-24.el10.x86_64
+  perl-Unicode-Normalize-1.32-511.el10.x86_64
+  perl-Unicode-UCD-0.78-515.el10_2.noarch
+  perl-User-pwent-1.05-515.el10_2.noarch
+  perl-autodie-2.37-512.el10.noarch
+  perl-autouse-1.11-515.el10_2.noarch
+  perl-bignum-0.67-512.el10.noarch
+  perl-blib-1.07-515.el10_2.noarch
+  perl-debugger-1.60-515.el10_2.noarch
+  perl-deprecate-0.04-515.el10_2.noarch
+  perl-devel-4:5.40.2-515.el10_2.x86_64
+  perl-diagnostics-1.40-515.el10_2.noarch
+  perl-doc-5.40.2-515.el10_2.noarch
+  perl-encoding-4:3.00-511.el10.x86_64
+  perl-encoding-warnings-0.14-515.el10_2.noarch
+  perl-experimental-0.032-511.el10.noarch
+  perl-fields-2.27-515.el10_2.noarch
+  perl-filetest-1.03-515.el10_2.noarch
+  perl-inc-latest-2:0.500-30.el10.noarch
+  perl-less-0.03-515.el10_2.noarch
+  perl-libintl-perl-1.33-11.el10.x86_64
+  perl-libnetcfg-4:5.40.2-515.el10_2.noarch
+  perl-local-lib-2.000029-9.el10.noarch
+  perl-meta-notation-5.40.2-515.el10_2.noarch
+  perl-open-1.13-515.el10_2.noarch
+  perl-perlfaq-5.20240218-511.el10.noarch
+  perl-ph-5.40.2-515.el10_2.x86_64
+  perl-sigtrap-1.10-515.el10_2.noarch
+  perl-sort-2.05-515.el10_2.noarch
+  perl-utils-5.40.2-515.el10_2.noarch
+  perl-vmsish-1.04-515.el10_2.noarch
+  python3-pyparsing-3.1.1-7.el10.noarch
+  rsync-3.5.0-3.el10_2.x86_64
+  sombok-2.4.0-23.el10.x86_64
+  systemtap-sdt-devel-5.4-3.el10.x86_64
+  systemtap-sdt-dtrace-5.4-3.el10.x86_64
+  texinfo-7.1-6.el10.x86_64
+  wget-1.24.5-8.el10_2.x86_64
+
+¡Listo!
+[cbasualdo@localhost ~]$ mkdir -p ~/evidencias
+{ cat /etc/os-release; uname -r; lscpu; free -h; df -h; } | tee ~/evidencias/anfitrion.txt
+NAME="Rocky Linux"
+VERSION="10.2 (Red Quartz)"
+RELEASE_TYPE="stable"
+ID="rocky"
+ID_LIKE="rhel centos fedora"
+VERSION_ID="10.2"
+PLATFORM_ID="platform:el10"
+PRETTY_NAME="Rocky Linux 10.2 (Red Quartz)"
+ANSI_COLOR="0;32"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:rocky:rocky:10::baseos"
+HOME_URL="https://rockylinux.org/"
+VENDOR_NAME="RESF"
+VENDOR_URL="https://resf.org/"
+BUG_REPORT_URL="https://bugs.rockylinux.org/"
+SUPPORT_END="2035-05-31"
+ROCKY_SUPPORT_PRODUCT="Rocky-Linux-10"
+ROCKY_SUPPORT_PRODUCT_VERSION="10.2"
+REDHAT_SUPPORT_PRODUCT="Rocky Linux"
+REDHAT_SUPPORT_PRODUCT_VERSION="10.2"
+6.12.0-211.64.1.el10_2.x86_64
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           39 bits physical, 48 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  4
+On-line CPU(s) list:                     0-3
+Vendor ID:                               GenuineIntel
+Model name:                              12th Gen Intel(R) Core(TM) i5-12450H
+CPU family:                              6
+Model:                                   154
+Thread(s) per core:                      1
+Core(s) per socket:                      4
+Socket(s):                               1
+Stepping:                                3
+BogoMIPS:                                4991,99
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ibrs_enhanced fsgsbase bmi1 avx2 bmi2 invpcid rdseed adx clflushopt sha_ni arat md_clear flush_l1d arch_capabilities
+Hypervisor vendor:                       KVM
+Virtualization type:                     full
+L1d cache:                               192 KiB (4 instances)
+L1i cache:                               128 KiB (4 instances)
+L2 cache:                                5 MiB (4 instances)
+L3 cache:                                48 MiB (4 instances)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0-3
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Indirect target selection: Mitigation; Aligned branch/return thunks
+Vulnerability Itlb multihit:             Not affected
+Vulnerability L1tf:                      Not affected
+Vulnerability Mds:                       Not affected
+Vulnerability Meltdown:                  Not affected
+Vulnerability Mmio stale data:           Not affected
+Vulnerability Old microcode:             Not affected
+Vulnerability Reg file data sampling:    Mitigation; Clear Register File
+Vulnerability Retbleed:                  Mitigation; Enhanced IBRS
+Vulnerability Spec rstack overflow:      Not affected
+Vulnerability Spec store bypass:         Vulnerable
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; PBRSB-eIBRS SW sequence; BHI SW loop, KVM SW loop
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Not affected
+               total        used        free      shared  buff/cache   available
+Mem:           7,5Gi       665Mi       5,9Gi       8,6Mi       1,2Gi       6,8Gi
+Swap:          4,0Gi          0B       4,0Gi
+S.ficheros           Tamaño Usados  Disp Uso% Montado en
+/dev/mapper/rlm-root    34G   2,8G   32G   9% /
+devtmpfs               3,8G      0  3,8G   0% /dev
+tmpfs                  3,8G      0  3,8G   0% /dev/shm
+tmpfs                  1,5G   8,6M  1,5G   1% /run
+tmpfs                  1,0M      0  1,0M   0% /run/credentials/systemd-journald.service
+/dev/sda2              2,0G   381M  1,6G  20% /boot
+tmpfs                  1,0M      0  1,0M   0% /run/credentials/getty@tty1.service
+tmpfs                  768M   4,0K  768M   1% /run/user/1000
+[cbasualdo@localhost ~]$ head -n 5 ~/evidencias/anfitrion.txt
+NAME="Rocky Linux"
+VERSION="10.2 (Red Quartz)"
+RELEASE_TYPE="stable"
+ID="rocky"
+ID_LIKE="rhel centos fedora"
+[cbasualdo@localhost ~]$ nproc
+free -h | head -n 2
+dnf repolist | grep -i crb
+which gcc make bison gawk makeinfo m4 patch git
+4
+               total        used        free      shared  buff/cache   available
+Mem:           7,5Gi       663Mi       5,9Gi       8,6Mi       1,2Gi       6,9Gi
+crb                                 Rocky Linux 10 - CRB
+/usr/bin/gcc
+/usr/bin/make
+/usr/bin/bison
+/usr/bin/gawk
+/usr/bin/makeinfo
+/usr/bin/m4
+/usr/bin/patch
+/usr/bin/git
+[cbasualdo@localhost ~]$ lsblk -f
+NAME FSTYPE FSVER LABEL                 UUID                                   FSAVAIL FSUSE% MOUNTPOINTS
+sda                                                                         
+├─sda1
+│                                                                           
+├─sda2
+│    xfs                                dac1e02f-3c40-46a9-8260-e2a37cbec660      1,6G    19% /boot
+└─sda3
+  │  LVM2_m LVM2                        YcseRD-QoNl-F89I-Eelm-0d0H-YeDM-eC0Nqh
+  ├─rlm-root
+  │  xfs                                c0ee175f-203a-44eb-9b6b-74685601e4cb     31,2G     8% /
+  └─rlm-swap
+     swap   1                           ad532460-4f3e-47ac-87e0-d09a3cf756ae                  [SWAP]
+sdb                                                                         
+sr0  iso966 Jolie Rocky-10-2-x86_64-dvd 2026-05-26-21-32-17-00              
+[cbasualdo@localhost ~]$ lsblk -d -o NAME,SIZE,TYPE
+NAME  SIZE TYPE
+sda    40G disk
+sdb    30G disk
+sr0   1,9G rom
+[cbasualdo@localhost ~]$ Get-History | Out-File "$HOME\Desktop\paso2.txt"
+-bash: Get-History: orden no encontrada
+-bash: Out-File: orden no encontrada
+[cbasualdo@localhost ~]$ Get-History | Out-File ".\paso2.txt"
+-bash: Get-History: orden no encontrada
+-bash: Out-File: orden no encontrada
+[cbasualdo@localhost ~]$
