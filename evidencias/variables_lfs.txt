@@ -1,0 +1,4 @@
+Directorio actual:
+/home/cbasualdo/grupo_3_SO1_2S26
+LFS=/mnt/lfs
+LFS_TGT=x86_64-lfs-linux-gnu
